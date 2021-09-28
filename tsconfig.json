@@ -16,6 +16,16 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "paths": {
+      "studio-lib": [
+        "dist/studio-lib/studio-lib",
+        "dist/studio-lib"
+      ],
+      "studio-lib-prefixed": [
+        "dist/studio-lib-prefixed/studio-lib-prefixed",
+        "dist/studio-lib-prefixed"
+      ]
+    },
     "lib": [
       "es2018",
       "dom"

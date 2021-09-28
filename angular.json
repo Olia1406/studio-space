@@ -3,5 +3,171 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "studio-lib": {
+      "projectType": "library",
+      "root": "projects/studio-lib",
+      "sourceRoot": "projects/studio-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/studio-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/studio-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/studio-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/studio-lib/src/test.ts",
+            "tsConfig": "projects/studio-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/studio-lib/karma.conf.js"
+          }
+        }
+      }
+    },
+    "studio-lib-prefixed": {
+      "projectType": "library",
+      "root": "projects/studio-lib-prefixed",
+      "sourceRoot": "projects/studio-lib-prefixed/src",
+      "prefix": "st",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/studio-lib-prefixed/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/studio-lib-prefixed/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/studio-lib-prefixed/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/studio-lib-prefixed/src/test.ts",
+            "tsConfig": "projects/studio-lib-prefixed/tsconfig.spec.json",
+            "karmaConfig": "projects/studio-lib-prefixed/karma.conf.js"
+          }
+        }
+      }
+    },
+    "studio-sheets": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/studio-sheets",
+      "sourceRoot": "projects/studio-sheets/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/studio-sheets",
+            "index": "projects/studio-sheets/src/index.html",
+            "main": "projects/studio-sheets/src/main.ts",
+            "polyfills": "projects/studio-sheets/src/polyfills.ts",
+            "tsConfig": "projects/studio-sheets/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/studio-sheets/src/favicon.ico",
+              "projects/studio-sheets/src/assets"
+            ],
+            "styles": [
+              "projects/studio-sheets/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/studio-sheets/src/environments/environment.ts",
+                  "with": "projects/studio-sheets/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "studio-sheets:build:production"
+            },
+            "development": {
+              "browserTarget": "studio-sheets:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "studio-sheets:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/studio-sheets/src/test.ts",
+            "polyfills": "projects/studio-sheets/src/polyfills.ts",
+            "tsConfig": "projects/studio-sheets/tsconfig.spec.json",
+            "karmaConfig": "projects/studio-sheets/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/studio-sheets/src/favicon.ico",
+              "projects/studio-sheets/src/assets"
+            ],
+            "styles": [
+              "projects/studio-sheets/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "studio-lib"
 }
