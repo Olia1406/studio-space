@@ -3,37 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "studio-lib": {
-      "projectType": "library",
-      "root": "projects/studio-lib",
-      "sourceRoot": "projects/studio-lib/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/studio-lib/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/studio-lib/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/studio-lib/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/studio-lib/src/test.ts",
-            "tsConfig": "projects/studio-lib/tsconfig.spec.json",
-            "karmaConfig": "projects/studio-lib/karma.conf.js"
-          }
-        }
-      }
-    },
     "studio-lib-prefixed": {
       "projectType": "library",
       "root": "projects/studio-lib-prefixed",
@@ -167,6 +136,11 @@
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "studio-lib"

@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {StudioLibPrefixedModule} from "../../../studio-lib-prefixed/src/lib/studio-lib-prefixed.module";
-// import {StudioLibPrefixedModule} from "studio-lib-prefixed";
-// import {CustomInputComponent} from "../../../studio-lib-prefixed/src/lib/custom-input/custom-input.component";
+import { BrowserModule } from '@angular/platform-browser'; 
+import { GlobalHeaderModule } from 'studio-lib-prefixed';
+// import { GlobalHeaderModule } from 'projects/studio-lib-prefixed/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +12,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StudioLibPrefixedModule
+    GlobalHeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

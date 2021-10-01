@@ -24,6 +24,10 @@
       "studio-lib-prefixed": [
         "dist/studio-lib-prefixed/studio-lib-prefixed",
         "dist/studio-lib-prefixed"
+      ],
+      "studio-lib2": [
+        "dist/studio-lib2/studio-lib2",
+        "dist/studio-lib2"
       ]
     },
     "lib": [

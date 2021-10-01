@@ -1,0 +1,28 @@
+@import "./fonts";
+
+@mixin flexbox($j: flex-start, $a: center, $d: row, $w: nowrap) {
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+    flex-direction: $d;
+    flex-wrap: $w;
+  }
+  
+  @mixin dimensions($w, $h) {
+    width: $w;
+    height: $h;
+  }
+  
+  @mixin font($font-family: "Nutino400", $size: 14px, $weight: normal) {
+    font-family: $font-family, "Lucida Sans Regular", sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+  }
+  
+  @mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
