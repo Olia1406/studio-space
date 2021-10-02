@@ -59,7 +59,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/studio-sheets/src/favicon.ico",
-              "projects/studio-sheets/src/assets"
+              "projects/studio-sheets/src/assets/images/e-icon.svg",
+              { "glob": "**/*", "input": "src/app/assets/", "output": "/assets/" }
             ],
             "styles": [
               "projects/studio-sheets/src/styles.scss"

@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Router } from '@angular/router';
 import {ITab} from "./tab.interface";
 
 @Component({
@@ -7,16 +8,28 @@ import {ITab} from "./tab.interface";
   styleUrls: ['./global-header.component.scss']
 })
 export class GlobalHeaderComponent implements OnInit {
-@Input() tabs:ITab[] = [
-  {title: "Some", onClick: () => {}},
-  {title: "My Content", onClick: () => {}},
-  {title: "Discover", onClick: () => {}},
-  {title: "Create", onClick: () => {}},
-  {title: "Notifications & Signals", onClick: () => {}}
+  
+  @Input() tabs:ITab[] = [
+  {title: "Some", onClick: () => {}, isActive: false},
+  {title: "My Content", onClick: () => {}, isActive: false},
+  {title: "Discover", onClick: () => {}, isActive: false},
+  {title: "Create", onClick: () => {}, isActive: false},
+  {title: "Notifications & Signals", onClick: () => {}, isActive: false}
 ];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+getActivePage(currentTab: any) {
+  for(let tab of this.tabs) {
+     if( tab.title === currentTab.title) {
+       tab.isActive = true
+     } else {
+       tab.isActive = false
+     }
+  }
+  currentTab.onClick()
+}
 
 }

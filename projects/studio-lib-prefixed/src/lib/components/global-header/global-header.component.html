@@ -1,12 +1,14 @@
 <header class="header">
     <nav>
         <ul class="header__tabs">
-                <li class="header__tab-item" *ngFor="let tab of tabs"><a href="" class="header__tab-link"
-                        (click)="tab.onClick()">{{tab.title}}</a></li>
+                <li class="header__tab-item" *ngFor="let tab of tabs"><a (click)=getActivePage(tab)
+                        [ngClass]="{'active': tab.isActive}" href="" class="header__tab-link"
+                        >{{tab.title}}</a></li>
         </ul>
     </nav>
 
     <div class="header__info-and-settings">
+       <!-- <st-svg-icon icon = "LIST_VIEW" widthStyle="30px" heightStyle="30px"></st-svg-icon> -->
         <div class="header__notifications">
             <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path

@@ -1,18 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; 
-import { GlobalHeaderModule } from 'studio-lib-prefixed';
-// import { GlobalHeaderModule } from 'projects/studio-lib-prefixed/src/public-api';
+import { GlobalHeaderModule, SvgIconModule } from 'studio-lib-prefixed';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { MyContentComponent } from './pages/my-content/my-content.component';
+import { DiscoverComponent } from './pages/discover/discover.component';
+import { CreateComponent } from './pages/create/create.component';
+import { NotificationsComponent } from './pages/notifications/notifications.component';
+import { RouterModule } from '@angular/router';
+import { SidebarLiComponent } from './components/sidebar-li/sidebar-li.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    MyContentComponent,
+    DiscoverComponent,
+    CreateComponent,
+    NotificationsComponent,
+    SidebarLiComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
-    GlobalHeaderModule
+    GlobalHeaderModule,
+    SvgIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

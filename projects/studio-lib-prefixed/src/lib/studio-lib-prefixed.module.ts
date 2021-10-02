@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    StudioLibPrefixedComponent
+    StudioLibPrefixedComponent,
   ],
   imports: [
     BrowserModule,

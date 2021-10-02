@@ -1,4 +1,5 @@
 export interface ITab {
    title: string,
-   onClick: () => void
+   onClick: () => void,
+   isActive: boolean
 }
