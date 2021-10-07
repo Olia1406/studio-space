@@ -11,6 +11,11 @@ import { CreateComponent } from './pages/create/create.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { RouterModule } from '@angular/router';
 import { SidebarLiComponent } from './components/sidebar-li/sidebar-li.component';
+import { DashboardsComponent } from './pages/my-content/dashboards/dashboards.component';
+import { DataComponent } from './pages/my-content/data/data.component';
+import { ReportsComponent } from './pages/my-content/reports/reports.component';
+import { PortfoliosComponent } from './pages/my-content/portfolios/portfolios.component';
+import { RankSheetsComponent } from './pages/my-content/rank-sheets/rank-sheets.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +24,12 @@ import { SidebarLiComponent } from './components/sidebar-li/sidebar-li.component
     DiscoverComponent,
     CreateComponent,
     NotificationsComponent,
-    SidebarLiComponent
+    SidebarLiComponent,
+    DashboardsComponent,
+    DataComponent,
+    ReportsComponent,
+    PortfoliosComponent,
+    RankSheetsComponent
   ],
   imports: [
     BrowserModule,

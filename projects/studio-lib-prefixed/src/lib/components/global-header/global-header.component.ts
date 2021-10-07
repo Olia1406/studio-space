@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { Router } from '@angular/router';
-import {ITab} from "./tab.interface";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { ITab } from "./tab.interface";
 
 @Component({
   selector: 'st-global-header',
@@ -8,28 +9,30 @@ import {ITab} from "./tab.interface";
   styleUrls: ['./global-header.component.scss']
 })
 export class GlobalHeaderComponent implements OnInit {
-  
-  @Input() tabs:ITab[] = [
-  {title: "Some", onClick: () => {}, isActive: false},
-  {title: "My Content", onClick: () => {}, isActive: false},
-  {title: "Discover", onClick: () => {}, isActive: false},
-  {title: "Create", onClick: () => {}, isActive: false},
-  {title: "Notifications & Signals", onClick: () => {}, isActive: false}
-];
-  constructor(private router: Router) { }
+
+  @Input() tabs: ITab[] = [
+    { title: "Some", onClick: () => { }, pageName: "" },
+    { title: "My Content", onClick: () => { }, pageName: "" },
+    { title: "Discover", onClick: () => { }, pageName: "" },
+    { title: "Create", onClick: () => { }, pageName: "" },
+    { title: "Notifications & Signals", onClick: () => { }, pageName: "" }
+  ];
+  pageUrl = 'home';
+  subscriptions = new Subscription();
+
+  constructor(private router: Router) {
+
+    this.subscriptions.add(this.router.events
+      .subscribe((event: any) => {
+          this.pageUrl = router.url.split('/')[1];
+      }))
+  }
 
   ngOnInit(): void {
   }
 
-getActivePage(currentTab: any) {
-  for(let tab of this.tabs) {
-     if( tab.title === currentTab.title) {
-       tab.isActive = true
-     } else {
-       tab.isActive = false
-     }
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe()
   }
-  currentTab.onClick()
-}
 
 }

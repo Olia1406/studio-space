@@ -1,1 +1,13 @@
-<p>my-content works!</p>
+<div class="myContent-container">
+  <aside>
+    <app-sidebar-li itemName="Dashboards" routerLink="dashboards" [routerLinkActive]="'active'" [iconClass]="'bi bi-graph-up'"></app-sidebar-li>
+    <app-sidebar-li itemName="Data" routerLink="data" [routerLinkActive]="'active'" [iconClass]="'bi bi bi-calendar3-range-fill'"></app-sidebar-li>
+    <app-sidebar-li itemName="Reports" routerLink="reports" [routerLinkActive]="'active'" [iconClass]="'bi bi-file-earmark-ruled-fill'"></app-sidebar-li>
+    <app-sidebar-li itemName="Portfolios" routerLink="portfolios" [routerLinkActive]="'active'" [iconClass]="'bi bi-bag-check-fill'"></app-sidebar-li>
+    <app-sidebar-li itemName="Rank Sheet" routerLink="rank-sheets" [routerLinkActive]="'active'" [iconClass]="'bi bi-table'"></app-sidebar-li>
+  </aside>
+  <article>
+    <router-outlet></router-outlet>
+  </article>
+</div>
+
