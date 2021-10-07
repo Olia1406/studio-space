@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lib:build": "ng build studio-lib-prefixed --watch",
+    "lib": "ng build studio-lib-prefixed --watch",
     "start-p": "ng serve studio-sheets -o"
 
   },

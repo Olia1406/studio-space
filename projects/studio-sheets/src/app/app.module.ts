@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser'; 
-import { GlobalHeaderModule, SvgIconModule } from 'studio-lib-prefixed';
+import { BrowserModule } from '@angular/platform-browser';
+import { GlobalHeaderModule, SidebarItemComponent, SvgIconModule } from 'studio-lib-prefixed';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { DataComponent } from './pages/my-content/data/data.component';
 import { ReportsComponent } from './pages/my-content/reports/reports.component';
 import { PortfoliosComponent } from './pages/my-content/portfolios/portfolios.component';
 import { RankSheetsComponent } from './pages/my-content/rank-sheets/rank-sheets.component';
+import {SidebarItemModule, StudioCardModule} from 'projects/studio-lib-prefixed/src/public-api';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { RankSheetsComponent } from './pages/my-content/rank-sheets/rank-sheets.
     RouterModule,
     AppRoutingModule,
     GlobalHeaderModule,
-    SvgIconModule
+    SvgIconModule,
+    StudioCardModule,
+    SidebarItemModule
   ],
   providers: [],
   bootstrap: [AppComponent]

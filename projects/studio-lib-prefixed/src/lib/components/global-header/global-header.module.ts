@@ -8,10 +8,10 @@ import { GlobalHeaderComponent } from './global-header.component';
   declarations: [
     GlobalHeaderComponent
   ],
-    imports: [
-        CommonModule,
-        // SvgIconModule
-    ],
+  imports: [
+    CommonModule,
+    // SvgIconModule
+  ],
   exports: [
     GlobalHeaderComponent
   ]

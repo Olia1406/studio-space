@@ -11,3 +11,9 @@ export * from './lib/components/global-header/global-header.module';
 
 export * from './lib/shared/svg-icon/svg-icon.component';
 export * from './lib/shared/svg-icon/svg-icon.module';
+
+export * from './lib/components/sidebar-item/sidebar-item.component';
+export * from './lib/components/sidebar-item/sidebar-item.module';
+
+export * from './lib/components/studio-card/studio-card.component';
+export * from './lib/components/studio-card/studio-card.module';

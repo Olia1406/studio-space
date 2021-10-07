@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class SidebarLiComponent implements OnInit {
 
 @Input() iconClass = 'bi bi-alarm-fill';
-@Input() itemName = 'Dashboards'
+@Input() itemName = 'Dashboards';
 
   constructor() { }
 
