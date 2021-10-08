@@ -3,37 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "studio-lib": {
-      "projectType": "library",
-      "root": "projects/studio-lib",
-      "sourceRoot": "projects/studio-lib/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/studio-lib/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/studio-lib/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/studio-lib/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/studio-lib/src/test.ts",
-            "tsConfig": "projects/studio-lib/tsconfig.spec.json",
-            "karmaConfig": "projects/studio-lib/karma.conf.js"
-          }
-        }
-      }
-    },
     "studio-lib-prefixed": {
       "projectType": "library",
       "root": "projects/studio-lib-prefixed",
@@ -90,7 +59,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/studio-sheets/src/favicon.ico",
-              "projects/studio-sheets/src/assets"
+              "projects/studio-sheets/src/assets/images/e-icon.svg",
+              { "glob": "**/*", "input": "src/app/assets/", "output": "/assets/" }
             ],
             "styles": [
               "projects/studio-sheets/src/styles.scss"
@@ -167,6 +137,11 @@
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "studio-lib"

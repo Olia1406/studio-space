@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
     <p>
       studio-lib-prefixed works!!!!
     </p>
-    <st-custom-input></st-custom-input>
   `,
   styles: [
   ]

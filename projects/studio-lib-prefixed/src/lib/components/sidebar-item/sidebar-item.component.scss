@@ -1,0 +1,28 @@
+@use "../../styles/mixins" as *;
+
+// li {
+//     @include flexbox();
+//     width: 320px;
+//     height: 60px;
+//     border-bottom: 1px solid lightgray;
+//     list-style: none;
+a {
+    @include flexbox();
+    width: 320px;
+    height: 60px;
+    border-bottom: 1px solid lightgray;
+
+    .icon {
+        font-size: 15px;
+        color: #7a7e85;
+        padding: 0 16px 0 18px;
+    }
+    span {
+        @include font("Nutino400", 16px);
+        color: #050609;
+    }
+    &:hover {
+        background-color: #ecedef;
+    }
+}
+// }

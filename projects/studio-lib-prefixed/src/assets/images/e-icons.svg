@@ -1,0 +1,181 @@
+<svg version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+
+    <symbol id="SCATTER_CHART" viewBox="0 0 40 40">
+      <g id="scatter_chart_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#555555" fill-rule="nonzero" x="9" y="26" width="22" height="1"></rect>
+        <rect id="Rectangle-Copy-2" fill="#555555" fill-rule="nonzero" x="9" y="19" width="22" height="1"></rect>
+        <rect id="Rectangle-Copy-3" fill="#555555" fill-rule="nonzero" x="9" y="12" width="22" height="1"></rect>
+        <circle id="Oval-3" fill="#555555" fill-rule="nonzero" cx="13.5" cy="12.5" r="2.5"></circle>
+        <circle id="Oval-3-Copy" fill="#555555" fill-rule="nonzero" cx="16.5" cy="19.5" r="2.5"></circle>
+        <circle id="Oval-3-Copy-2" fill="#555555" fill-rule="nonzero" cx="23.5" cy="19.5" r="2.5"></circle>
+        <circle id="Oval-3-Copy-3" fill="#555555" fill-rule="nonzero" cx="26.5" cy="26.5" r="2.5"></circle>
+      </g>
+    </symbol>
+
+    <symbol id="STAT_TABLE" viewBox="0 0 40 40">
+      <g id="stat_chart_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M14.3623047,26.9926026 L11.4501953,26.9926026 L11.4501953,14.8424444 L8.60986328,16.0115693 L8.60986328,13.4329387 L14.0546875,11.0619096 L14.3623047,11.0619096 L14.3623047,26.9926026 Z M17.315039,25.4192008 C17.315039,25.1788188 17.3543453,24.9548298 17.432959,24.7472271 C17.5115726,24.5396244 17.6243645,24.3593406 17.7713379,24.2063702 C17.9183113,24.0533999 18.0943349,23.9332107 18.299414,23.845799 C18.5044932,23.7583874 18.7369127,23.7146822 18.9966797,23.7146822 C19.2496106,23.7146822 19.4803212,23.7583874 19.6888183,23.845799 C19.8973155,23.9332107 20.076757,24.0533999 20.2271484,24.2063702 C20.3775398,24.3593406 20.4920406,24.5396244 20.5706543,24.7472271 C20.6492679,24.9548298 20.6885742,25.1788188 20.6885742,25.4192008 C20.6885742,25.6595828 20.6492679,25.8835718 20.5706543,26.0911745 C20.4920406,26.2987771 20.3775398,26.4772399 20.2271484,26.6265681 C20.076757,26.7758963 19.8973155,26.8942645 19.6888183,26.9816762 C19.4803212,27.0690878 19.2496106,27.112793 18.9966797,27.112793 C18.7369127,27.112793 18.5044932,27.0690878 18.299414,26.9816762 C18.0943349,26.8942645 17.9183113,26.7758963 17.7713379,26.6265681 C17.6243645,26.4772399 17.5115726,26.2987771 17.432959,26.0911745 C17.3543453,25.8835718 17.315039,25.6595828 17.315039,25.4192008 Z M31.7563476,26.9926026 L22.958496,26.9926026 L22.958496,24.8073223 L26.9985351,19.3331953 C27.2856459,18.9107057 27.5249013,18.5264644 27.7163085,18.18046 C27.9077158,17.8344555 28.0615228,17.515772 28.1777343,17.2243999 C28.2939458,16.9330277 28.3759763,16.6635125 28.4238281,16.4158462 C28.4716799,16.1681799 28.4956054,15.9278014 28.4956054,15.6947037 C28.4956054,14.9881262 28.3811046,14.4345274 28.1520996,14.0338907 C27.9230945,13.633254 27.5932638,13.4329387 27.1625976,13.4329387 C26.9028307,13.4329387 26.677247,13.5003175 26.4858398,13.6350771 C26.2944326,13.7698367 26.1337897,13.9555837 26.0039062,14.1923235 C25.8740227,14.4290634 25.7783206,14.711326 25.7167968,15.0391196 C25.6552731,15.3669133 25.6245117,15.7201968 25.6245117,16.0989806 L22.7124023,16.0989806 C22.7124023,15.3778345 22.8166493,14.7004044 23.0251464,14.0666699 C23.2336436,13.4329355 23.5310039,12.8793367 23.9172363,12.4058569 C24.3034687,11.9323772 24.7751437,11.5572412 25.3322753,11.2804376 C25.889407,11.0036341 26.516598,10.8652344 27.2138671,10.8652344 C27.8974643,10.8652344 28.5007298,10.9690341 29.0236816,11.1766368 C29.5466334,11.3842395 29.985838,11.6810704 30.3413085,12.0671385 C30.6967791,12.4532066 30.9650869,12.9266793 31.1462402,13.4875707 C31.3273934,14.0484621 31.4179687,14.6785449 31.4179687,15.3778381 C31.4179687,15.9095923 31.3530279,16.424949 31.2231445,16.9239238 C31.093261,17.4228987 30.9069836,17.9200449 30.6643066,18.4153776 C30.4216296,18.9107103 30.1259783,19.4114987 29.7773437,19.9177578 C29.4287091,20.4240169 29.0356467,20.9539421 28.5981445,21.5075491 L26.680664,24.4248983 L31.7563476,24.4248983 L31.7563476,26.9926026 Z" id="1.2" fill="#555555"></path>
+      </g>
+    </symbol>
+
+    <symbol id="TABLE_CHART" viewBox="0 0 40 40">
+      <g id="table_chart_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="table_chart-icon" transform="translate(9.000000, 10.000000)" fill="#555555">
+          <path d="M0,0 L11,0 L11,19 L0,19 L0,0 Z M1,9 L1,13 L5,13 L5,9 L1,9 Z M1,4 L1,8 L5,8 L5,4 L1,4 Z M1,14 L1,18 L5,18 L5,14 L1,14 Z M6,4 L6,8 L10,8 L10,4 L6,4 Z M6,9 L6,13 L10,13 L10,9 L6,9 Z M6,14 L6,18 L10,18 L10,14 L6,14 Z" id="Combined-Shape"></path>
+        </g>
+        <g id="table/chart-icon" transform="translate(21.000000, 10.000000)" fill="#555555">
+          <g id="Group-8">
+            <rect id="Rectangle-8-Copy" x="0" y="0" width="11" height="3"></rect>
+            <rect id="Rectangle-8-Copy-2" x="0" y="4" width="9" height="3"></rect>
+            <rect id="Rectangle-8-Copy-3" x="0" y="8" width="6" height="3"></rect>
+            <rect id="Rectangle-8-Copy-4" transform="translate(2.500000, 13.500000) scale(-1, 1) translate(-2.500000, -13.500000) " x="0" y="12" width="5" height="3"></rect>
+            <rect id="Rectangle-8-Copy-5" transform="translate(2.000000, 17.500000) scale(-1, 1) translate(-2.000000, -17.500000) " x="0" y="16" width="4" height="3"></rect>
+          </g>
+        </g>
+      </g>
+    </symbol>
+
+    <symbol id="TABLE" viewBox="0 0 40 40">
+      <g id="table_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="table_chart-icon" transform="translate(9.000000, 10.000000)" fill="#555555">
+          <path d="M0,0 L22,0 L22,19 L0,19 L0,0 Z M15,9 L15,13 L21,13 L21,9 L15,9 Z M1,9 L1,13 L7,13 L7,9 L1,9 Z M1,4 L1,8 L7,8 L7,4 L1,4 Z M1,14 L1,18 L7,18 L7,14 L1,14 Z M8,4 L8,8 L14,8 L14,4 L8,4 Z M8,9 L8,13 L14,13 L14,9 L8,9 Z M8,14 L8,18 L14,18 L14,14 L8,14 Z M15,4 L15,8 L21,8 L21,4 L15,4 Z M15,14 L15,18 L21,18 L21,14 L15,14 Z" id="Combined-Shape"></path>
+        </g>
+      </g>
+    </symbol>
+
+    <symbol id="COLUMN" viewBox="0 0 40 40">
+      <g id="vertical_bar_chart_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="vertical_bar_chart_icon" transform="translate(8.000000, 10.000000)" fill="#555555">
+          <g id="Group-8">
+            <rect id="Rectangle-8-Copy" x="8" y="0" width="16" height="3"></rect>
+            <rect id="Rectangle-8-Copy-2" x="8" y="4" width="13" height="3"></rect>
+            <rect id="Rectangle-8-Copy-3" x="8" y="8" width="10" height="3"></rect>
+            <rect id="Rectangle-8-Copy-4" transform="translate(5.500000, 13.500000) scale(-1, 1) translate(-5.500000, -13.500000) " x="3" y="12" width="5" height="3"></rect>
+            <rect id="Rectangle-8-Copy-5" transform="translate(4.000000, 17.500000) scale(-1, 1) translate(-4.000000, -17.500000) " x="0" y="16" width="8" height="3"></rect>
+          </g>
+        </g>
+      </g>
+    </symbol>
+
+    <symbol id="WIDGET_LIBRARY" viewBox="0 0 40 40">
+      <g id="widget_library_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" stroke="#776737" fill-opacity="0.5" fill="#F4F4F4" cx="20" cy="20" r="18"></circle>
+        <rect id="Rectangle-7" fill="#776737" x="10" y="10" width="6" height="6"></rect>
+        <rect id="Rectangle-7-Copy-3" fill="#776737" x="10" y="17" width="6" height="6"></rect>
+        <rect id="Rectangle-7-Copy-6" fill="#776737" x="10" y="24" width="6" height="6"></rect>
+        <rect id="Rectangle-7-Copy" fill="#776737" x="17" y="10" width="6" height="6"></rect>
+        <rect id="Rectangle-7-Copy-5" fill="#776737" x="17" y="17" width="6" height="6"></rect>
+        <rect id="Rectangle-7-Copy-7" fill="#776737" x="17" y="24" width="6" height="6"></rect>
+        <rect id="Rectangle-7-Copy-2" fill="#776737" x="24" y="10" width="6" height="6"></rect>
+        <rect id="Rectangle-7-Copy-4" fill="#776737" x="24" y="17" width="6" height="6"></rect>
+        <rect id="Rectangle-7-Copy-8" fill="#776737" x="24" y="24" width="6" height="6"></rect>
+      </g>
+    </symbol>
+
+    <symbol id="HEADER_MENU_ICON" viewBox="0 0 31 31">
+      <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+        <path fill="#00397E" fill-rule="nonzero" d="M24.748 24.22c-2.537 3.007-6.298 4.746-10.265 4.746-3.966 0-7.727-1.74-10.265-4.746-.066-.078-.093-.18-.074-.28.02-.099.083-.184.173-.234 1.793-.872 3.643-1.625 5.537-2.256l.924-.337c.362-.205.604-.568.654-.977.228-.802.104-1.661-.342-2.369-1.15-1.249-2.274-2.79-2.274-6.644-.14-1.553.4-3.091 1.481-4.227 1.083-1.137 2.605-1.763 4.186-1.722 1.58-.041 3.103.585 4.186 1.721 1.082 1.136 1.621 2.675 1.481 4.228 0 3.854-1.124 5.395-2.274 6.644-.446.708-.57 1.567-.341 2.369.05.41.292.772.654.977l.925.337c1.893.63 3.742 1.384 5.534 2.255.09.05.152.135.173.234.02.1-.007.203-.073.281z"/>
+        <circle cx="14.547" cy="14.547" r="14.547" stroke="#00397E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+    </symbol>
+
+    <symbol id="ICON_USER" viewBox="0 0 32 32">
+      <g>
+        <path d="M16 0C7.168 0 0 7.168 0 16C0 24.832 7.168 32 16 32C24.832 32 32 24.832 32 16C32 7.168 24.832 0 16 0ZM16 4.8C18.656 4.8 20.8 6.944 20.8 9.6C20.8 12.256 18.656 14.4 16 14.4C13.344 14.4 11.2 12.256 11.2 9.6C11.2 6.944 13.344 4.8 16 4.8ZM16 27.52C12 27.52 8.464 25.472 6.4 22.368C6.448 19.184 12.8 17.44 16 17.44C19.184 17.44 25.552 19.184 25.6 22.368C23.536 25.472 20 27.52 16 27.52Z"/>
+      </g>
+    </symbol>
+
+    <symbol id="DELETE_ICON_CIRCLE" viewBox="0 0 21 21">
+      <g fill="none" fill-rule="evenodd">
+        <path fill="#FFF" d="M10.5 20.5c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10"/>
+        <path stroke="#000" d="M10.5 20.5c-5.514 0-10-4.486-10-10s4.486-10 10-10 10 4.486 10 10-4.486 10-10 10z"/>
+        <path fill="#000" d="M14.245 6.755a1.059 1.059 0 0 0-1.498 0L10.5 9.002 8.253 6.755a1.059 1.059 0 1 0-1.498 1.498L9.002 10.5l-2.247 2.247a1.059 1.059 0 1 0 1.498 1.498l2.247-2.247 2.247 2.247a1.059 1.059 0 1 0 1.498-1.498L11.998 10.5l2.247-2.247a1.059 1.059 0 0 0 0-1.498"/>
+      </g>
+    </symbol>
+
+    <symbol id="DELETE_ICON" viewBox="0 0 24 24">
+      <g stroke="none" stroke-width="2">
+        <path fill="none" d="M0 0h24v24H0V0z"/>
+        <path d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/>
+      </g>
+    </symbol>
+
+    <symbol id="FILTERS_ICON" viewBox="0 0 16 9">
+      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Query" transform="translate(-784.000000, -127.000000)" fill="#026AF3" stroke="#00387E">
+          <g id="filter" transform="translate(784.000000, 126.000000)">
+            <rect id="Rectangle" x="1" y="2" width="14" height="1" rx="0.5"/>
+            <rect id="Rectangle-Copy" x="3" y="5" width="10" height="1" rx="0.5"/>
+            <rect id="Rectangle-Copy-2" stroke-linejoin="round" x="6" y="8" width="4" height="1" rx="0.5"/>
+          </g>
+        </g>
+      </g>
+    </symbol>
+
+    <symbol id="CHECK_ICON" viewBox="0 0 18 18">
+      <g fill="none" fill-rule="evenodd">
+        <rect width="16" height="16" fill="#00397E" rx="8"/>
+        <path fill="#FFF" d="M3.856 9.13c-.456-.436-.454-1.145.006-1.584l-.633.605c.459-.439 1.2-.443 1.654-.008l1.825 1.745 4.764-4.556c.456-.436 1.197-.433 1.656.006l-.632-.605c.459.439.456 1.153.006 1.584l-4.97 4.751c-.455.436-1.19.439-1.65 0L3.857 9.13z"/>
+      </g>
+    </symbol>
+
+    <!-- primeng icons
+      <symbol id="GRID_VIEW" viewBox="0 0 24 24">
+          <g id="table">
+            <path d="M18,4.25H6A2.75,2.75,0,0,0,3.25,7V17A2.75,2.75,0,0,0,6,19.75H18A2.75,2.75,0,0,0,20.75,17V7A2.75,2.75,0,0,0,18,4.25ZM19.25,7v4.25h-6.5V5.75H18A1.25,1.25,0,0,1,19.25,7ZM6,5.75h5.25v5.5H4.75V7A1.25,1.25,0,0,1,6,5.75ZM4.75,17V12.75h6.5v5.5H6A1.25,1.25,0,0,1,4.75,17ZM18,18.25H12.75v-5.5h6.5V17A1.25,1.25,0,0,1,18,18.25Z"/>
+          </g>
+        </symbol>
+
+        <symbol id="LIST_VIEW" viewBox="0 0 24 24">
+          <g id="bars">
+            <path d="M19,12.75H5a.75.75,0,0,1,0-1.5H19a.75.75,0,0,1,0,1.5Z"/>
+            <path d="M19,8.25H5a.75.75,0,0,1,0-1.5H19a.75.75,0,0,1,0,1.5Z"/>
+            <path d="M19,17.25H5a.75.75,0,0,1,0-1.5H19a.75.75,0,0,1,0,1.5Z"/>
+          </g>
+        </symbol>
+-->
+
+    <symbol id="GRID_VIEW" viewBox="0 0 17 14" fill="none">
+      <path d="M0 6.46154H5V0H0V6.46154ZM0 14H5V7.53846H0V14ZM6 14H11V7.53846H6V14ZM12 14H17V7.53846H12V14ZM6 6.46154H11V0H6V6.46154ZM12 0V6.46154H17V0H12Z" fill="#00485E"/>
+    </symbol>
+
+    <symbol id="LIST_VIEW" viewBox="0 0 17 14" fill="none">
+      <path d="M0 9H4V5H0V9ZM0 14H4V10H0V14ZM0 4H4V0H0V4ZM5 9H17V5H5V9ZM5 14H17V10H5V14ZM5 0V4H17V0H5Z" fill="#00485E"/>
+    </symbol>
+
+    <symbol id="BACK_ICON"  viewBox="0 0 515.556 515.556">
+      <path d="m128.885 257.778 257.778-257.778v128.886l-128.889 128.892 128.897 128.886-.008 128.892z" />
+    </symbol>
+
+    <symbol id="WHITE_NOTIFICATION_BELL" fill="none" viewBox="0 0 16 20">
+      <path d="M14 14V9c0-3.07-1.64-5.64-4.5-6.32V2C9.5 1.17 8.83.5 8 .5S6.5 1.17 6.5 2v.68C3.63 3.36 2 5.92 2 9v5l-2 2v1h16v-1l-2-2zm-5 0H7v-2h2v2zm0-4H7V6h2v4zM8 20c1.1 0 2-.9 2-2H6a2 2 0 0 0 2 2z" fill="#fff"/>
+    </symbol>
+
+    <symbol id="WHITE_ROUND_QUESTION_MARK" fill="none" viewBox="0 0 20 20">
+      <path d="M9 16h2v-2H9v2zm1-16C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14C7.79 4 6 5.79 6 8h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z" fill="#fff"/>
+    </symbol>
+
+    <symbol id="WHITE_SETTINGS" fill="none" viewBox="0 0 20 20">
+      <path d="M17.43 10.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46a.503.503 0 0 0-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L12.49.42A.488.488 0 0 0 12 0H8c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98L.46 12.63c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM10 13.5c-1.93 0-3.5-1.57-3.5-3.5S8.07 6.5 10 6.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" fill="#fff"/>
+    </symbol>
+
+    <symbol id="WHITE_APPS" fill="none" viewBox="0 0 16 16">
+      <path d="M0 4h4V0H0v4zm6 12h4v-4H6v4zm-6 0h4v-4H0v4zm0-6h4V6H0v4zm6 0h4V6H6v4zm6-10v4h4V0h-4zM6 4h4V0H6v4zm6 6h4V6h-4v4zm0 6h4v-4h-4v4z" fill="#FBFBFB"/>
+    </symbol>
+
+    <symbol id="WHITE_HAMBURGER" viewBox="0 0 18 16" fill="none">
+      <path d="M0 14H18V12H0V14ZM0 9H18V7H0V9ZM0 2V4H18V2H0Z" fill="#FBFBFB"/>
+    </symbol>
+
+    <symbol id="LIST_ARROW_DOWN" fill="none" viewBox="0 0 16 20">
+      <path d="M11.06 7.726L8 10.779 4.94 7.726l-.94.94 4 4 4-4-.94-.94z" fill="#212223"/>
+    </symbol>
+
+    <symbol id="LIST_ARROW_UP" fill="none" viewBox="0 0 16 20">
+      <path d="M8 7.332l-4 4 .94.94L8 9.22l3.06 3.053.94-.94-4-4z" fill="#212223"/>
+    </symbol>
+  </defs>
+</svg>
