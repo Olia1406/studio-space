@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GlobalHeaderComponent } from './global-header.component';
-
+import { ContentHeaderComponent } from './content-header.component';
 
 @NgModule({
   declarations: [
-    GlobalHeaderComponent
+    ContentHeaderComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    GlobalHeaderComponent
+    ContentHeaderComponent
   ]
 })
-export class GlobalHeaderModule { }
+
+export class ContentHeaderModule { }

@@ -17,3 +17,6 @@ export * from './lib/components/sidebar-item/sidebar-item.module';
 
 export * from './lib/components/studio-card/studio-card.component';
 export * from './lib/components/studio-card/studio-card.module';
+
+export * from './lib/components/content-header/content-header.component';
+export * from './lib/components/content-header/content-header.module';

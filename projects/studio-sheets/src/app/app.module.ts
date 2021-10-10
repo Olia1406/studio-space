@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { GlobalHeaderModule, SidebarItemComponent, SvgIconModule } from 'studio-lib-prefixed';
+import { ContentHeaderModule, GlobalHeaderModule, SvgIconModule, SidebarItemModule, StudioCardModule} from 'studio-lib-prefixed';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +16,9 @@ import { DataComponent } from './pages/my-content/data/data.component';
 import { ReportsComponent } from './pages/my-content/reports/reports.component';
 import { PortfoliosComponent } from './pages/my-content/portfolios/portfolios.component';
 import { RankSheetsComponent } from './pages/my-content/rank-sheets/rank-sheets.component';
-import {SidebarItemModule, StudioCardModule} from 'projects/studio-lib-prefixed/src/public-api';
+
+import {BreadcrumbModule} from 'primeng/breadcrumb';
+import { DefaultDashboardComponent } from './pages/my-content/dashboards/default-dashboard/default-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {SidebarItemModule, StudioCardModule} from 'projects/studio-lib-prefixed/
     DataComponent,
     ReportsComponent,
     PortfoliosComponent,
-    RankSheetsComponent
+    RankSheetsComponent,
+    DefaultDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,9 @@ import {SidebarItemModule, StudioCardModule} from 'projects/studio-lib-prefixed/
     GlobalHeaderModule,
     SvgIconModule,
     StudioCardModule,
-    SidebarItemModule
+    SidebarItemModule,
+    BreadcrumbModule,
+    ContentHeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
