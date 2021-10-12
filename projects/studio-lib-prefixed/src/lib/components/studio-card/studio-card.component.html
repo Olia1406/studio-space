@@ -1,5 +1,5 @@
 <div class="content-item-card">
-  <img class="content-item-img" [src]="cardData.contentItemSrc">
+  <img class="content-item-img" [src]="cardData.contentItemSrc" (click) = defineCard(cardData.id)>
   <footer class="footer">
     <h5>{{cardData.cardName}}</h5>
     <i [ngClass]="cardData.cardIconClass"></i>

@@ -22,7 +22,7 @@ const routes: Routes = [
     {path: 'rank-sheets', component: RankSheetsComponent },
     {path: '', component: DashboardsComponent, pathMatch: 'full'}
   ]},
-  {path: 'my-content/dashboard/11', component: DefaultDashboardComponent},
+  {path: 'my-content/dashboard/:id', component: DefaultDashboardComponent},
   {path: 'discover', component: DiscoverComponent},
   {path: 'create', component: CreateComponent},
   {path: 'notifications', component: NotificationsComponent},

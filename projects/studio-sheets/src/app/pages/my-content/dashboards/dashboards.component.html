@@ -5,7 +5,7 @@
     <div class="line"></div>
     <div class="dashboard-items-container">
       <ng-container *ngFor = "let item of dashboardsList">
-        <st-studio-card [cardData] = "item" (click)="item.onClick()"></st-studio-card>
+        <st-studio-card [cardData] = "item" (cardEvent) = routeToPage($event)></st-studio-card>
       </ng-container>
     </div>
   </section>

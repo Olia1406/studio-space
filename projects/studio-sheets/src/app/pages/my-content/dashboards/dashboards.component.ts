@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ICard } from 'dist/studio-lib-prefixed/lib/components/studio-card/card.interface';
+import { Card } from 'studio-lib-prefixed';
+import { DashboardsService } from './dashboards.service';
 
 @Component({
   selector: 'app-dashboards',
@@ -9,61 +10,20 @@ import { ICard } from 'dist/studio-lib-prefixed/lib/components/studio-card/card.
 })
 export class DashboardsComponent implements OnInit {
 
-  dashboardsList: Array<ICard> = [
-    {
-      id: 11,
-      contentItemSrc: 'https://firebasestorage.googleapis.com/v0/b/my-project-d612f.appspot.com/o/sun.png?alt=media&token=ed1d41e8-37bd-4cf1-a28d-d02c47332a3e',
-      cardName: 'Default dashboard',
-      cardIconClass: 'bi bi-house-door-fill',
-      onClick: () => {this.routeToPage('11') }
-    },
-    {
-      id: 12,
-      contentItemSrc: 'https://firebasestorage.googleapis.com/v0/b/my-project-d612f.appspot.com/o/sun.png?alt=media&token=ed1d41e8-37bd-4cf1-a28d-d02c47332a3e',
-      cardName: 'Rank sheet',
-      cardIconClass: 'bi bi-house-door-fill',
-      onClick: () => { }
-    }
-  ];
-  widgetsList = [
-    {
-      id: 21,
-      contentItemSrc: 'https://firebasestorage.googleapis.com/v0/b/my-project-d612f.appspot.com/o/sun.png?alt=media&token=ed1d41e8-37bd-4cf1-a28d-d02c47332a3e',
-      cardName: 'Rank sheet',
-      cardIconClass: 'bi bi-tablet-landscape-fill',
-      onClick: () => { }
-    },
-    {
-      id: 22,
-      contentItemSrc: 'https://firebasestorage.googleapis.com/v0/b/my-project-d612f.appspot.com/o/sun.png?alt=media&token=ed1d41e8-37bd-4cf1-a28d-d02c47332a3e',
-      cardName: 'My Portfolio chart',
-      cardIconClass: 'bi bi-house-door-fill',
-      onClick: () => { }
-    }
-  ];
-  sharedDashboardsList = [
-    {
-      id: 31,
-      contentItemSrc: 'https://firebasestorage.googleapis.com/v0/b/my-project-d612f.appspot.com/o/sun.png?alt=media&token=ed1d41e8-37bd-4cf1-a28d-d02c47332a3e',
-      cardName: 'Default dashboard',
-      cardIconClass: 'bi bi-house-door-fill',
-      onClick: () => { }
-    },
-    {
-      id: 32,
-      contentItemSrc: 'https://firebasestorage.googleapis.com/v0/b/my-project-d612f.appspot.com/o/sun.png?alt=media&token=ed1d41e8-37bd-4cf1-a28d-d02c47332a3e',
-      cardName: 'Rank sheet',
-      cardIconClass: 'bi bi-house-door-fill',
-      onClick: () => { }
-    }
-  ];
+  dashboardsList: Array<Card> = [];
+  widgetsList: Array<Card> = [];
+  sharedDashboardsList: Array<Card> = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private dashboardsService: DashboardsService) { }
 
   ngOnInit(): void {
+    this.dashboardsList = this.dashboardsService.getDashboards();
+    this.widgetsList = this.dashboardsService.getWidgets();
+    this.sharedDashboardsList = this.dashboardsService.getSharedDAshboards();
   }
 
-  routeToPage(pagePathID: string) {
+  routeToPage(pagePathID: number | string) {
     this.router.navigateByUrl(`my-content/dashboard/${pagePathID}`)
   }
 

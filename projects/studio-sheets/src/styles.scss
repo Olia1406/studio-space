@@ -1,8 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
-@import url(../src/app/styles/_fonts.scss);
+// @import url(../src/app/styles/_fonts.scss);
+@import '../src/app/styles/fonts';
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: #44474B;;
 }
+
+.p-breadcrumb {
+    border: none;
+    background: none;
+    padding: 0 0 7px;
+}
+
+.btn {
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    padding: 0 16px; 
+    font-family: "Nutino600";
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.btn-lightgray {
+    background-color: #DEE0E3;
+    color: #00465C;
+    &:hover {
+        background-color: lightgray;
+    }
+}
+
+.btn-teal {
+    background-color:  #1D688B;
+    color: white;
+    &:hover {
+        background-color: #2784af;
+    }
+}
+
+.btn-small {
+    background-color: transparent;
+    padding: 0 10px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    &:hover {
+        background-color: rgb(238, 237, 237);
+    }
+}
+
