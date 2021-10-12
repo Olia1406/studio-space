@@ -60,9 +60,16 @@
             "assets": [
               "projects/studio-sheets/src/favicon.ico",
               "projects/studio-sheets/src/assets/images/e-icon.svg",
-              { "glob": "**/*", "input": "src/app/assets/", "output": "/assets/" }
+              {
+                "glob": "**/*",
+                "input": "src/app/assets/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "projects/studio-sheets/src/styles.scss"
             ],
             "scripts": []
@@ -131,7 +138,8 @@
               "projects/studio-sheets/src/assets"
             ],
             "styles": [
-              "projects/studio-sheets/src/styles.scss"
+              "projects/studio-sheets/src/styles.scss",
+              "node_modules/primeng/resources/primeng.css"
             ],
             "scripts": []
           }

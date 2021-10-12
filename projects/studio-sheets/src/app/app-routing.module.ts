@@ -4,6 +4,7 @@ import { CreateComponent } from './pages/create/create.component';
 import { DiscoverComponent } from './pages/discover/discover.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardsComponent } from './pages/my-content/dashboards/dashboards.component';
+import { DefaultDashboardComponent } from './pages/my-content/dashboards/default-dashboard/default-dashboard.component';
 import { DataComponent } from './pages/my-content/data/data.component';
 import { MyContentComponent } from './pages/my-content/my-content.component';
 import { PortfoliosComponent } from './pages/my-content/portfolios/portfolios.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
     {path: 'rank-sheets', component: RankSheetsComponent },
     {path: '', component: DashboardsComponent, pathMatch: 'full'}
   ]},
+  {path: 'my-content/dashboard/:id', component: DefaultDashboardComponent},
   {path: 'discover', component: DiscoverComponent},
   {path: 'create', component: CreateComponent},
   {path: 'notifications', component: NotificationsComponent},

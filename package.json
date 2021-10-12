@@ -8,12 +8,13 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lib": "ng build studio-lib-prefixed --watch",
-    "start-p": "ng serve studio-sheets -o"
-
+    "start-p": "ng serve studio-sheets -o",
+    "build-p": "ng build studio-sheets"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.1.0",
+    "@angular/cdk": "^12.2.9",
     "@angular/common": "~12.1.0",
     "@angular/compiler": "~12.1.0",
     "@angular/core": "~12.1.0",
@@ -21,6 +22,8 @@
     "@angular/platform-browser": "~12.1.0",
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
+    "primeicons": "^4.1.0",
+    "primeng": "^12.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"

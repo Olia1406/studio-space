@@ -1,20 +1,27 @@
 @use "../../styles/mixins" as * ;
 
 .myContent-container {
-  @include flexbox(flex-start, flex-start);
+  @include flexbox(flex-start, stretch);
 
   aside {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: sticky;
+    top: 52px;
+    left: 0;
     padding: 0px;
     width: 320px;
-    height: calc(100vh - 52px);
     background: #FAFBFC;
     box-shadow: inset -1px 0px 0px #CED1D6;
   }
   .active{
     background-color: #ecedef;
   }
-  
+  article {
+    width: 100%;
+    background-color: #F5F6F7;
+    padding-bottom: 20px;
+  }
+
 }
