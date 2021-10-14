@@ -63,7 +63,7 @@ export class DashboardsService {
   getWidgets(): Array<Card> {
     return this.widgetsList
   }
-  getSharedDAshboards(): Array<Card> {
+  getSharedDashboards(): Array<Card> {
     return this.sharedDashboardsList
   }
 

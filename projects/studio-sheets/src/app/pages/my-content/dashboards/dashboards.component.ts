@@ -20,7 +20,7 @@ export class DashboardsComponent implements OnInit {
   ngOnInit(): void {
     this.dashboardsList = this.dashboardsService.getDashboards();
     this.widgetsList = this.dashboardsService.getWidgets();
-    this.sharedDashboardsList = this.dashboardsService.getSharedDAshboards();
+    this.sharedDashboardsList = this.dashboardsService.getSharedDashboards();
   }
 
   routeToPage(pagePathID: number | string) {
