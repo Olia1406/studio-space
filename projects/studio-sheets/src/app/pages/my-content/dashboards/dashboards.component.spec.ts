@@ -1,25 +1,40 @@
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { Component, Input, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { Card, StudioCardComponent } from 'studio-lib-prefixed';
+import { Router } from '@angular/router';
+import { Card, ContentHeaderComponent, StudioCardComponent } from 'studio-lib-prefixed';
 
 import { DashboardsComponent } from './dashboards.component';
+import { DashboardsService } from './dashboards.service';
 
-describe('DashboardsComponent', () => {
+fdescribe('DashboardsComponent', () => {
   let component: DashboardsComponent;
   let fixture: ComponentFixture<DashboardsComponent>;
-  let cards: Array<Card>;
+  let CARDS: Array<Card>;
+  let mockDashboardsService: any;
+  let mockRouter; 
 
   beforeEach(async () => {
+    mockDashboardsService = jasmine.createSpyObj(['getDashboards', 'getWidgets', 'getSharedDAshboards']);
+    mockRouter = jasmine.createSpyObj(['navigateByUrl']);
     await TestBed.configureTestingModule({
-      declarations: [DashboardsComponent],
+      imports: [Router],
+      declarations: [
+        DashboardsComponent,
+        StudioCardComponent,
+        ContentHeaderComponent
+      ],
+      providers: [
+        {provide: DashboardsService, useValue: mockDashboardsService},
+        {provide: Router, usevalue: mockRouter}
+      ],
       schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    cards =  [
+    CARDS =  [
       {
         id: 11,
         contentItemSrc: '',
@@ -49,6 +64,13 @@ describe('DashboardsComponent', () => {
     expect(component).toBeDefined();
   });
 
+  it('should set dashboardsList correctly from the service', () => {
+    mockDashboardsService.getDashboards.and.returnValue(CARDS);
+    fixture.detectChanges();
+
+    expect(component.dashboardsList.length).toBe(3);
+  })
+
   it('should contain list title "My dashboards"', () => {
     const dashboardElement: HTMLElement = fixture.nativeElement;
     const title = dashboardElement.querySelectorAll('h3')[0];
@@ -57,12 +79,13 @@ describe('DashboardsComponent', () => {
   })
 
   it('should have proper count of card-elements', () => {
-    const cardComponents = fixture.debugElement.queryAll(By.directive(StudioCardComponent));
-
-    component.dashboardsList = cards;
+    mockDashboardsService.getDashboards.and.returnValue(CARDS);
     fixture.detectChanges();
 
-    expect(cardComponents.length).toBe(3);
+    const cardsInDashboardsList = fixture.debugElement.queryAll(By.css('.dashboard-items-container'))[0].children;
+    
+    expect(cardsInDashboardsList.length).toBe(3);
+    expect(cardsInDashboardsList[0].componentInstance.cardData.cardName).toEqual('Default dashboard');
   })
 
 });
