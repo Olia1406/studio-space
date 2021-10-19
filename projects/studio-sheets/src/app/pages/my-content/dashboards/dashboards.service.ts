@@ -8,19 +8,19 @@ export class DashboardsService {
 
   dashboardsList: Array<Card> = [
     {
-      id: 11,
+      id: '​fa1270e7-7a7d-43b2-9cb0-631e7a05d7fc​',
       contentItemSrc: '',
       cardName: 'Default dashboard',
       cardIconClass: 'bi bi-house-door-fill'
     },
     {
-      id: 12,
+      id: '​d84c161a-c96d-4fd1-bccd-b107da0c31be​',
       contentItemSrc: 'https://firebasestorage.googleapis.com/v0/b/my-project-d612f.appspot.com/o/sun.png?alt=media&token=ed1d41e8-37bd-4cf1-a28d-d02c47332a3e',
       cardName: 'Rank sheet',
       cardIconClass: 'bi bi-house-door-fill'
     },
     {
-      id: 13,
+      id: '​64e1c2cb-bfdb-442d-a980-a5f117173b07​',
       contentItemSrc: 'https://firebasestorage.googleapis.com/v0/b/my-project-d612f.appspot.com/o/sun.png?alt=media&token=ed1d41e8-37bd-4cf1-a28d-d02c47332a3e',
       cardName: 'Rank sheet',
       cardIconClass: 'bi bi-house-door-fill'
