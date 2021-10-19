@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Card } from 'projects/studio-lib-prefixed/src/lib/components/studio-card/card.interface';
-// import { ICard } from 'dist/studio-lib-prefixed/lib/components/studio-card/card.interface';
-
 
 @Injectable({
   providedIn: 'root'
@@ -65,7 +63,7 @@ export class DashboardsService {
   getWidgets(): Array<Card> {
     return this.widgetsList
   }
-  getSharedDAshboards(): Array<Card> {
+  getSharedDashboards(): Array<Card> {
     return this.sharedDashboardsList
   }
 
