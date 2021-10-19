@@ -22,6 +22,8 @@ import {BreadcrumbModule} from 'primeng/breadcrumb';
 import {DropdownModule} from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxCumulioModule } from 'ngx-cumulio';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +52,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContentHeaderModule,
     DropdownModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxCumulioModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
