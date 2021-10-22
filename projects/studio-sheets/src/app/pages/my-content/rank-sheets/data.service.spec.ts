@@ -1,0 +1,1441 @@
+import { TestBed } from '@angular/core/testing';
+
+import { DataService } from './data.service';
+
+describe('DataService', () => {
+  let service: DataService;
+  let mockData: Array<any> = [
+    {
+      "id": "1",
+      "name": "TOTAL",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.035380,
+          "benchmarkReturn": 0.056226,
+          "valueAdd": -0.020846,
+          "fundWeight": 100.0000,
+          "benchmarkWeight": 100.0000,
+          "fundCTR": 0.035380,
+          "benchmarkCTR": 0.056226,
+          "relativeCTR": -0.020846,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ],
+      "group": [
+        {
+          "id": "40",
+          "name": "Consumer Discretionary",
+          "calculationType": "CTR",
+          "methodology": "geometricCompounding",
+          "benchmarks": [
+            {
+              "startDate": "20201201",
+              "endDate": "20201231",
+              "id": "BSLN0003",
+              "name": "Global Equity Fund"
+            }
+          ],
+          "drillable": true,
+          "securities": false,
+          "periods": [
+            {
+              "type": "Custom",
+              "startDate": "20201201",
+              "endDate": "20201231",
+              "returnType": "Gross",
+              "fundReturn": -0.006169,
+              "benchmarkReturn": 0.064568,
+              "valueAdd": -0.070737,
+              "fundWeight": 7.8433,
+              "benchmarkWeight": 12.1637,
+              "fundCTR": -0.000484,
+              "benchmarkCTR": 0.007854,
+              "relativeCTR": -0.008338,
+              "statusCode": 0,
+              "message": "OK"
+            }
+          ],
+          "group": [
+            {
+              "id": "127",
+              "name": "Consumer Services",
+              "calculationType": "CTR",
+              "methodology": "geometricCompounding",
+              "benchmarks": [
+                {
+                  "startDate": "20201201",
+                  "endDate": "20201231",
+                  "id": "BSLN0003",
+                  "name": "Global Equity Fund"
+                }
+              ],
+              "drillable": true,
+              "securities": false,
+              "periods": [
+                {
+                  "type": "Custom",
+                  "startDate": "20201201",
+                  "endDate": "20201231",
+                  "returnType": "Gross",
+                  "fundReturn": 0.016501,
+                  "benchmarkReturn": 0.047717,
+                  "valueAdd": -0.031217,
+                  "fundWeight": 2.4255,
+                  "benchmarkWeight": 0.8045,
+                  "fundCTR": 0.000400,
+                  "benchmarkCTR": 0.000384,
+                  "relativeCTR": 0.000016,
+                  "statusCode": 0,
+                  "message": "OK"
+                }
+              ],
+              "group": [
+                {
+                  "id": "128",
+                  "name": "Hotels, Restaurants & Leisure",
+                  "calculationType": "CTR",
+                  "methodology": "geometricCompounding",
+                  "benchmarks": [
+                    {
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "id": "BSLN0003",
+                      "name": "Global Equity Fund"
+                    }
+                  ],
+                  "drillable": true,
+                  "securities": false,
+                  "periods": [
+                    {
+                      "type": "Custom",
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "returnType": "Gross",
+                      "fundReturn": 0.016558,
+                      "benchmarkReturn": 0.047717,
+                      "valueAdd": -0.031159,
+                      "fundWeight": 2.3758,
+                      "benchmarkWeight": 0.8045,
+                      "fundCTR": 0.000393,
+                      "benchmarkCTR": 0.000384,
+                      "relativeCTR": 0.000009,
+                      "statusCode": 0,
+                      "message": "OK"
+                    }
+                  ],
+                  "group": [
+                    {
+                      "id": "129",
+                      "name": "Restaurants",
+                      "calculationType": "CTR",
+                      "methodology": "geometricCompounding",
+                      "benchmarks": [
+                        {
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "id": "BSLN0003",
+                          "name": "Global Equity Fund"
+                        }
+                      ],
+                      "drillable": false,
+                      "securities": false,
+                      "periods": [
+                        {
+                          "type": "Custom",
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "returnType": "Gross",
+                          "fundReturn": 0.017182,
+                          "benchmarkReturn": 0.040161,
+                          "valueAdd": -0.022979,
+                          "fundWeight": 2.2714,
+                          "benchmarkWeight": 0.2168,
+                          "fundCTR": 0.000390,
+                          "benchmarkCTR": 0.000087,
+                          "relativeCTR": 0.000303,
+                          "statusCode": 0,
+                          "message": "OK"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "188",
+                      "name": "Hotels, Resorts & Cruise Lines",
+                      "calculationType": "CTR",
+                      "methodology": "geometricCompounding",
+                      "benchmarks": [
+                        {
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "id": "BSLN0003",
+                          "name": "Global Equity Fund"
+                        }
+                      ],
+                      "drillable": false,
+                      "securities": false,
+                      "periods": [
+                        {
+                          "type": "Custom",
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "returnType": "Gross",
+                          "fundReturn": 0.002567,
+                          "benchmarkReturn": 0.046879,
+                          "valueAdd": -0.044313,
+                          "fundWeight": 0.1044,
+                          "benchmarkWeight": 0.1735,
+                          "fundCTR": 0.000003,
+                          "benchmarkCTR": 0.000081,
+                          "relativeCTR": -0.000079,
+                          "statusCode": 0,
+                          "message": "OK"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "18",
+          "name": "Energy",
+          "calculationType": "CTR",
+          "methodology": "geometricCompounding",
+          "benchmarks": [
+            {
+              "startDate": "20201201",
+              "endDate": "20201231",
+              "id": "BSLN0003",
+              "name": "Global Equity Fund"
+            }
+          ],
+          "drillable": true,
+          "securities": false,
+          "periods": [
+            {
+              "type": "Custom",
+              "startDate": "20201201",
+              "endDate": "20201231",
+              "returnType": "Gross",
+              "fundReturn": 0.002932,
+              "benchmarkReturn": -0.004426,
+              "valueAdd": 0.007358,
+              "fundWeight": 2.0147,
+              "benchmarkWeight": 1.3455,
+              "fundCTR": 0.000059,
+              "benchmarkCTR": -0.000060,
+              "relativeCTR": 0.000119,
+              "statusCode": 0,
+              "message": "OK"
+            }
+          ],
+          "group": [
+            {
+              "id": "19",
+              "name": "Energy",
+              "calculationType": "CTR",
+              "methodology": "geometricCompounding",
+              "benchmarks": [
+                {
+                  "startDate": "20201201",
+                  "endDate": "20201231",
+                  "id": "BSLN0003",
+                  "name": "Global Equity Fund"
+                }
+              ],
+              "drillable": true,
+              "securities": false,
+              "periods": [
+                {
+                  "type": "Custom",
+                  "startDate": "20201201",
+                  "endDate": "20201231",
+                  "returnType": "Gross",
+                  "fundReturn": 0.002932,
+                  "benchmarkReturn": -0.004426,
+                  "valueAdd": 0.007358,
+                  "fundWeight": 2.0147,
+                  "benchmarkWeight": 1.3455,
+                  "fundCTR": 0.000059,
+                  "benchmarkCTR": -0.000060,
+                  "relativeCTR": 0.000119,
+                  "statusCode": 0,
+                  "message": "OK"
+                }
+              ],
+              "group": [
+                {
+                  "id": "20",
+                  "name": "Energy Equipment & Services",
+                  "calculationType": "CTR",
+                  "methodology": "geometricCompounding",
+                  "benchmarks": [
+                    {
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "id": "BSLN0003",
+                      "name": "Global Equity Fund"
+                    }
+                  ],
+                  "drillable": true,
+                  "securities": false,
+                  "periods": [
+                    {
+                      "type": "Custom",
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "returnType": "Gross",
+                      "fundReturn": null,
+                      "benchmarkReturn": 0.120172,
+                      "valueAdd": null,
+                      "fundWeight": null,
+                      "benchmarkWeight": 0.0096,
+                      "fundCTR": null,
+                      "benchmarkCTR": 0.000011,
+                      "relativeCTR": null,
+                      "statusCode": 2810,
+                      "message": "No return data"
+                    }
+                  ],
+                  "group": [
+                    {
+                      "id": "21",
+                      "name": "Oil & Gas Equipment & Services",
+                      "calculationType": "CTR",
+                      "methodology": "geometricCompounding",
+                      "benchmarks": [
+                        {
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "id": "BSLN0003",
+                          "name": "Global Equity Fund"
+                        }
+                      ],
+                      "drillable": false,
+                      "securities": false,
+                      "periods": [
+                        {
+                          "type": "Custom",
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "returnType": "Gross",
+                          "fundReturn": null,
+                          "benchmarkReturn": 0.120172,
+                          "valueAdd": null,
+                          "fundWeight": null,
+                          "benchmarkWeight": 0.0096,
+                          "fundCTR": null,
+                          "benchmarkCTR": 0.000011,
+                          "relativeCTR": null,
+                          "statusCode": 2810,
+                          "message": "No return data"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "22",
+                  "name": "Oil, Gas & Consumable Fuels",
+                  "calculationType": "CTR",
+                  "methodology": "geometricCompounding",
+                  "benchmarks": [
+                    {
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "id": "BSLN0003",
+                      "name": "Global Equity Fund"
+                    }
+                  ],
+                  "drillable": true,
+                  "securities": false,
+                  "periods": [
+                    {
+                      "type": "Custom",
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "returnType": "Gross",
+                      "fundReturn": 0.002932,
+                      "benchmarkReturn": -0.005240,
+                      "valueAdd": 0.008172,
+                      "fundWeight": 2.0147,
+                      "benchmarkWeight": 1.3359,
+                      "fundCTR": 0.000059,
+                      "benchmarkCTR": -0.000070,
+                      "relativeCTR": 0.000129,
+                      "statusCode": 0,
+                      "message": "OK"
+                    }
+                  ],
+                  "group": [
+                    {
+                      "id": "23",
+                      "name": "Integrated Oil & Gas",
+                      "calculationType": "CTR",
+                      "methodology": "geometricCompounding",
+                      "benchmarks": [
+                        {
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "id": "BSLN0003",
+                          "name": "Global Equity Fund"
+                        }
+                      ],
+                      "drillable": false,
+                      "securities": false,
+                      "periods": [
+                        {
+                          "type": "Custom",
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "returnType": "Gross",
+                          "fundReturn": -0.032248,
+                          "benchmarkReturn": -0.011667,
+                          "valueAdd": -0.020581,
+                          "fundWeight": 1.3529,
+                          "benchmarkWeight": 0.9753,
+                          "fundCTR": -0.000436,
+                          "benchmarkCTR": -0.000114,
+                          "relativeCTR": -0.000323,
+                          "statusCode": 0,
+                          "message": "OK"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "108",
+                      "name": "Oil & Gas Exploration & Production",
+                      "calculationType": "CTR",
+                      "methodology": "geometricCompounding",
+                      "benchmarks": [
+                        {
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "id": "BSLN0003",
+                          "name": "Global Equity Fund"
+                        }
+                      ],
+                      "drillable": false,
+                      "securities": false,
+                      "periods": [
+                        {
+                          "type": "Custom",
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "returnType": "Gross",
+                          "fundReturn": 0.000000,
+                          "benchmarkReturn": 0.059275,
+                          "valueAdd": -0.059275,
+                          "fundWeight": 0.0014,
+                          "benchmarkWeight": 0.1533,
+                          "fundCTR": 0.000000,
+                          "benchmarkCTR": 0.000091,
+                          "relativeCTR": -0.000091,
+                          "statusCode": 0,
+                          "message": "OK"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ];
+  let completedMockData: Array<any> = [
+    {
+      "id": "1",
+      "parentId": null,
+      "grpLevel": 1,
+      "name": "TOTAL",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.035380,
+          "benchmarkReturn": 0.056226,
+          "valueAdd": -0.020846,
+          "fundWeight": 100.0000,
+          "benchmarkWeight": 100.0000,
+          "fundCTR": 0.035380,
+          "benchmarkCTR": 0.056226,
+          "relativeCTR": -0.020846,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ],
+      "group": [
+        {
+          "id": "40",
+          "parentId": 1,
+          "grpLevel": 2,
+          "name": "Consumer Discretionary",
+          "calculationType": "CTR",
+          "methodology": "geometricCompounding",
+          "benchmarks": [
+            {
+              "startDate": "20201201",
+              "endDate": "20201231",
+              "id": "BSLN0003",
+              "name": "Global Equity Fund"
+            }
+          ],
+          "drillable": true,
+          "securities": false,
+          "periods": [
+            {
+              "type": "Custom",
+              "startDate": "20201201",
+              "endDate": "20201231",
+              "returnType": "Gross",
+              "fundReturn": -0.006169,
+              "benchmarkReturn": 0.064568,
+              "valueAdd": -0.070737,
+              "fundWeight": 7.8433,
+              "benchmarkWeight": 12.1637,
+              "fundCTR": -0.000484,
+              "benchmarkCTR": 0.007854,
+              "relativeCTR": -0.008338,
+              "statusCode": 0,
+              "message": "OK"
+            }
+          ],
+          "group": [
+            {
+              "id": "127",
+              "parentId": 40,
+              "grpLevel": 3,
+              "name": "Consumer Services",
+              "calculationType": "CTR",
+              "methodology": "geometricCompounding",
+              "benchmarks": [
+                {
+                  "startDate": "20201201",
+                  "endDate": "20201231",
+                  "id": "BSLN0003",
+                  "name": "Global Equity Fund"
+                }
+              ],
+              "drillable": true,
+              "securities": false,
+              "periods": [
+                {
+                  "type": "Custom",
+                  "startDate": "20201201",
+                  "endDate": "20201231",
+                  "returnType": "Gross",
+                  "fundReturn": 0.016501,
+                  "benchmarkReturn": 0.047717,
+                  "valueAdd": -0.031217,
+                  "fundWeight": 2.4255,
+                  "benchmarkWeight": 0.8045,
+                  "fundCTR": 0.000400,
+                  "benchmarkCTR": 0.000384,
+                  "relativeCTR": 0.000016,
+                  "statusCode": 0,
+                  "message": "OK"
+                }
+              ],
+              "group": [
+                {
+                  "id": "128",
+                  "parentId": 127,
+                  "grpLevel": 4,
+                  "name": "Hotels, Restaurants & Leisure",
+                  "calculationType": "CTR",
+                  "methodology": "geometricCompounding",
+                  "benchmarks": [
+                    {
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "id": "BSLN0003",
+                      "name": "Global Equity Fund"
+                    }
+                  ],
+                  "drillable": true,
+                  "securities": false,
+                  "periods": [
+                    {
+                      "type": "Custom",
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "returnType": "Gross",
+                      "fundReturn": 0.016558,
+                      "benchmarkReturn": 0.047717,
+                      "valueAdd": -0.031159,
+                      "fundWeight": 2.3758,
+                      "benchmarkWeight": 0.8045,
+                      "fundCTR": 0.000393,
+                      "benchmarkCTR": 0.000384,
+                      "relativeCTR": 0.000009,
+                      "statusCode": 0,
+                      "message": "OK"
+                    }
+                  ],
+                  "group": [
+                    {
+                      "id": "129",
+                      "parentId": 128,
+                      "grpLevel": 5,
+                      "name": "Restaurants",
+                      "calculationType": "CTR",
+                      "methodology": "geometricCompounding",
+                      "benchmarks": [
+                        {
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "id": "BSLN0003",
+                          "name": "Global Equity Fund"
+                        }
+                      ],
+                      "drillable": false,
+                      "securities": false,
+                      "periods": [
+                        {
+                          "type": "Custom",
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "returnType": "Gross",
+                          "fundReturn": 0.017182,
+                          "benchmarkReturn": 0.040161,
+                          "valueAdd": -0.022979,
+                          "fundWeight": 2.2714,
+                          "benchmarkWeight": 0.2168,
+                          "fundCTR": 0.000390,
+                          "benchmarkCTR": 0.000087,
+                          "relativeCTR": 0.000303,
+                          "statusCode": 0,
+                          "message": "OK"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "188",
+                      "parentId": 128,
+                      "grpLevel": 5,
+                      "name": "Hotels, Resorts & Cruise Lines",
+                      "calculationType": "CTR",
+                      "methodology": "geometricCompounding",
+                      "benchmarks": [
+                        {
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "id": "BSLN0003",
+                          "name": "Global Equity Fund"
+                        }
+                      ],
+                      "drillable": false,
+                      "securities": false,
+                      "periods": [
+                        {
+                          "type": "Custom",
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "returnType": "Gross",
+                          "fundReturn": 0.002567,
+                          "benchmarkReturn": 0.046879,
+                          "valueAdd": -0.044313,
+                          "fundWeight": 0.1044,
+                          "benchmarkWeight": 0.1735,
+                          "fundCTR": 0.000003,
+                          "benchmarkCTR": 0.000081,
+                          "relativeCTR": -0.000079,
+                          "statusCode": 0,
+                          "message": "OK"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "18",
+          "parentId": 1,
+          "grpLevel": 2,
+          "name": "Energy",
+          "calculationType": "CTR",
+          "methodology": "geometricCompounding",
+          "benchmarks": [
+            {
+              "startDate": "20201201",
+              "endDate": "20201231",
+              "id": "BSLN0003",
+              "name": "Global Equity Fund"
+            }
+          ],
+          "drillable": true,
+          "securities": false,
+          "periods": [
+            {
+              "type": "Custom",
+              "startDate": "20201201",
+              "endDate": "20201231",
+              "returnType": "Gross",
+              "fundReturn": 0.002932,
+              "benchmarkReturn": -0.004426,
+              "valueAdd": 0.007358,
+              "fundWeight": 2.0147,
+              "benchmarkWeight": 1.3455,
+              "fundCTR": 0.000059,
+              "benchmarkCTR": -0.000060,
+              "relativeCTR": 0.000119,
+              "statusCode": 0,
+              "message": "OK"
+            }
+          ],
+          "group": [
+            {
+              "id": "19",
+              "parentId": 18,
+              "grpLevel": 3,
+              "name": "Energy",
+              "calculationType": "CTR",
+              "methodology": "geometricCompounding",
+              "benchmarks": [
+                {
+                  "startDate": "20201201",
+                  "endDate": "20201231",
+                  "id": "BSLN0003",
+                  "name": "Global Equity Fund"
+                }
+              ],
+              "drillable": true,
+              "securities": false,
+              "periods": [
+                {
+                  "type": "Custom",
+                  "startDate": "20201201",
+                  "endDate": "20201231",
+                  "returnType": "Gross",
+                  "fundReturn": 0.002932,
+                  "benchmarkReturn": -0.004426,
+                  "valueAdd": 0.007358,
+                  "fundWeight": 2.0147,
+                  "benchmarkWeight": 1.3455,
+                  "fundCTR": 0.000059,
+                  "benchmarkCTR": -0.000060,
+                  "relativeCTR": 0.000119,
+                  "statusCode": 0,
+                  "message": "OK"
+                }
+              ],
+              "group": [
+                {
+                  "id": "20",
+                  "parentId": 19,
+                  "grpLevel": 4,
+                  "name": "Energy Equipment & Services",
+                  "calculationType": "CTR",
+                  "methodology": "geometricCompounding",
+                  "benchmarks": [
+                    {
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "id": "BSLN0003",
+                      "name": "Global Equity Fund"
+                    }
+                  ],
+                  "drillable": true,
+                  "securities": false,
+                  "periods": [
+                    {
+                      "type": "Custom",
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "returnType": "Gross",
+                      "fundReturn": null,
+                      "benchmarkReturn": 0.120172,
+                      "valueAdd": null,
+                      "fundWeight": null,
+                      "benchmarkWeight": 0.0096,
+                      "fundCTR": null,
+                      "benchmarkCTR": 0.000011,
+                      "relativeCTR": null,
+                      "statusCode": 2810,
+                      "message": "No return data"
+                    }
+                  ],
+                  "group": [
+                    {
+                      "id": "21",
+                      "parentId": 20,
+                      "grpLevel": 5,
+                      "name": "Oil & Gas Equipment & Services",
+                      "calculationType": "CTR",
+                      "methodology": "geometricCompounding",
+                      "benchmarks": [
+                        {
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "id": "BSLN0003",
+                          "name": "Global Equity Fund"
+                        }
+                      ],
+                      "drillable": false,
+                      "securities": false,
+                      "periods": [
+                        {
+                          "type": "Custom",
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "returnType": "Gross",
+                          "fundReturn": null,
+                          "benchmarkReturn": 0.120172,
+                          "valueAdd": null,
+                          "fundWeight": null,
+                          "benchmarkWeight": 0.0096,
+                          "fundCTR": null,
+                          "benchmarkCTR": 0.000011,
+                          "relativeCTR": null,
+                          "statusCode": 2810,
+                          "message": "No return data"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "22",
+                  "parentId": 19,
+                  "grpLevel": 4,
+                  "name": "Oil, Gas & Consumable Fuels",
+                  "calculationType": "CTR",
+                  "methodology": "geometricCompounding",
+                  "benchmarks": [
+                    {
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "id": "BSLN0003",
+                      "name": "Global Equity Fund"
+                    }
+                  ],
+                  "drillable": true,
+                  "securities": false,
+                  "periods": [
+                    {
+                      "type": "Custom",
+                      "startDate": "20201201",
+                      "endDate": "20201231",
+                      "returnType": "Gross",
+                      "fundReturn": 0.002932,
+                      "benchmarkReturn": -0.005240,
+                      "valueAdd": 0.008172,
+                      "fundWeight": 2.0147,
+                      "benchmarkWeight": 1.3359,
+                      "fundCTR": 0.000059,
+                      "benchmarkCTR": -0.000070,
+                      "relativeCTR": 0.000129,
+                      "statusCode": 0,
+                      "message": "OK"
+                    }
+                  ],
+                  "group": [
+                    {
+                      "id": "23",
+                      "parentId": 22,
+                      "grpLevel": 5,
+                      "name": "Integrated Oil & Gas",
+                      "calculationType": "CTR",
+                      "methodology": "geometricCompounding",
+                      "benchmarks": [
+                        {
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "id": "BSLN0003",
+                          "name": "Global Equity Fund"
+                        }
+                      ],
+                      "drillable": false,
+                      "securities": false,
+                      "periods": [
+                        {
+                          "type": "Custom",
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "returnType": "Gross",
+                          "fundReturn": -0.032248,
+                          "benchmarkReturn": -0.011667,
+                          "valueAdd": -0.020581,
+                          "fundWeight": 1.3529,
+                          "benchmarkWeight": 0.9753,
+                          "fundCTR": -0.000436,
+                          "benchmarkCTR": -0.000114,
+                          "relativeCTR": -0.000323,
+                          "statusCode": 0,
+                          "message": "OK"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "108",
+                      "parentId": 22,
+                      "grpLevel": 5,
+                      "name": "Oil & Gas Exploration & Production",
+                      "calculationType": "CTR",
+                      "methodology": "geometricCompounding",
+                      "benchmarks": [
+                        {
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "id": "BSLN0003",
+                          "name": "Global Equity Fund"
+                        }
+                      ],
+                      "drillable": false,
+                      "securities": false,
+                      "periods": [
+                        {
+                          "type": "Custom",
+                          "startDate": "20201201",
+                          "endDate": "20201231",
+                          "returnType": "Gross",
+                          "fundReturn": 0.000000,
+                          "benchmarkReturn": 0.059275,
+                          "valueAdd": -0.059275,
+                          "fundWeight": 0.0014,
+                          "benchmarkWeight": 0.1533,
+                          "fundCTR": 0.000000,
+                          "benchmarkCTR": 0.000091,
+                          "relativeCTR": -0.000091,
+                          "statusCode": 0,
+                          "message": "OK"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ];
+  let transformedMockData: Array<any> = [
+    {
+      "id": "1",
+      "parentId": null,
+      "grpLevel": 1,
+      "name": "TOTAL",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.035380,
+          "benchmarkReturn": 0.056226,
+          "valueAdd": -0.020846,
+          "fundWeight": 100.0000,
+          "benchmarkWeight": 100.0000,
+          "fundCTR": 0.035380,
+          "benchmarkCTR": 0.056226,
+          "relativeCTR": -0.020846,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "40",
+      "parentId": "1",
+      "grpLevel": 2,
+      "name": "Consumer Discretionary",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": -0.006169,
+          "benchmarkReturn": 0.064568,
+          "valueAdd": -0.070737,
+          "fundWeight": 7.8433,
+          "benchmarkWeight": 12.1637,
+          "fundCTR": -0.000484,
+          "benchmarkCTR": 0.007854,
+          "relativeCTR": -0.008338,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "127",
+      "parentId": "40",
+      "grpLevel": 3,
+      "name": "Consumer Services",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.016501,
+          "benchmarkReturn": 0.047717,
+          "valueAdd": -0.031217,
+          "fundWeight": 2.4255,
+          "benchmarkWeight": 0.8045,
+          "fundCTR": 0.000400,
+          "benchmarkCTR": 0.000384,
+          "relativeCTR": 0.000016,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "128",
+      "parentId": "127",
+      "grpLevel": 4,
+      "name": "Hotels, Restaurants & Leisure",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.016558,
+          "benchmarkReturn": 0.047717,
+          "valueAdd": -0.031159,
+          "fundWeight": 2.3758,
+          "benchmarkWeight": 0.8045,
+          "fundCTR": 0.000393,
+          "benchmarkCTR": 0.000384,
+          "relativeCTR": 0.000009,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "129",
+      "parentId": "128",
+      "grpLevel": 5,
+      "name": "Restaurants",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": false,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.017182,
+          "benchmarkReturn": 0.040161,
+          "valueAdd": -0.022979,
+          "fundWeight": 2.2714,
+          "benchmarkWeight": 0.2168,
+          "fundCTR": 0.000390,
+          "benchmarkCTR": 0.000087,
+          "relativeCTR": 0.000303,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "188",
+      "parentId": "128",
+      "grpLevel": 5,
+      "name": "Hotels, Resorts & Cruise Lines",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": false,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.002567,
+          "benchmarkReturn": 0.046879,
+          "valueAdd": -0.044313,
+          "fundWeight": 0.1044,
+          "benchmarkWeight": 0.1735,
+          "fundCTR": 0.000003,
+          "benchmarkCTR": 0.000081,
+          "relativeCTR": -0.000079,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "parentId": "1",
+      "grpLevel": 2,
+      "name": "Energy",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.002932,
+          "benchmarkReturn": -0.004426,
+          "valueAdd": 0.007358,
+          "fundWeight": 2.0147,
+          "benchmarkWeight": 1.3455,
+          "fundCTR": 0.000059,
+          "benchmarkCTR": -0.000060,
+          "relativeCTR": 0.000119,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "parentId": "18",
+      "grpLevel": 3,
+      "name": "Energy",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.002932,
+          "benchmarkReturn": -0.004426,
+          "valueAdd": 0.007358,
+          "fundWeight": 2.0147,
+          "benchmarkWeight": 1.3455,
+          "fundCTR": 0.000059,
+          "benchmarkCTR": -0.000060,
+          "relativeCTR": 0.000119,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "parentId": "19",
+      "grpLevel": 4,
+      "name": "Energy Equipment & Services",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": null,
+          "benchmarkReturn": 0.120172,
+          "valueAdd": null,
+          "fundWeight": null,
+          "benchmarkWeight": 0.0096,
+          "fundCTR": null,
+          "benchmarkCTR": 0.000011,
+          "relativeCTR": null,
+          "statusCode": 2810,
+          "message": "No return data"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "parentId": "20",
+      "grpLevel": 5,
+      "name": "Oil & Gas Equipment & Services",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": false,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": null,
+          "benchmarkReturn": 0.120172,
+          "valueAdd": null,
+          "fundWeight": null,
+          "benchmarkWeight": 0.0096,
+          "fundCTR": null,
+          "benchmarkCTR": 0.000011,
+          "relativeCTR": null,
+          "statusCode": 2810,
+          "message": "No return data"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "parentId": "19",
+      "grpLevel": 4,
+      "name": "Oil, Gas & Consumable Fuels",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.002932,
+          "benchmarkReturn": -0.005240,
+          "valueAdd": 0.008172,
+          "fundWeight": 2.0147,
+          "benchmarkWeight": 1.3359,
+          "fundCTR": 0.000059,
+          "benchmarkCTR": -0.000070,
+          "relativeCTR": 0.000129,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "parentId": "22",
+      "grpLevel": 5,
+      "name": "Integrated Oil & Gas",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": false,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": -0.032248,
+          "benchmarkReturn": -0.011667,
+          "valueAdd": -0.020581,
+          "fundWeight": 1.3529,
+          "benchmarkWeight": 0.9753,
+          "fundCTR": -0.000436,
+          "benchmarkCTR": -0.000114,
+          "relativeCTR": -0.000323,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "108",
+      "parentId": "22",
+      "grpLevel": 5,
+      "name": "Oil & Gas Exploration & Production",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": false,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.000000,
+          "benchmarkReturn": 0.059275,
+          "valueAdd": -0.059275,
+          "fundWeight": 0.0014,
+          "benchmarkWeight": 0.1533,
+          "fundCTR": 0.000000,
+          "benchmarkCTR": 0.000091,
+          "relativeCTR": -0.000091,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    }
+  ];
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(DataService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it('#fromNestedToOneLevel returns proper value', () => {
+
+    expect(service.fromNestedToOneLevel(mockData)).toEqual(transformedMockData)
+  })
+
+
+
+
+});
