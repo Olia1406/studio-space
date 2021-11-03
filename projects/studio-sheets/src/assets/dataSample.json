@@ -1,0 +1,146 @@
+[
+    {
+      "id": "1",
+      "parentId": null,
+      "groupLevel": 1,
+      "name": "TOTAL",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.035380,
+          "benchmarkReturn": 0.056226,
+          "valueAdd": -0.020846,
+          "fundWeight": 100.0000,
+          "benchmarkWeight": 100.0000,
+          "fundCTR": 0.035380,
+          "benchmarkCTR": 0.056226,
+          "relativeCTR": -0.020846,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "65",
+      "parentId": "1",
+      "groupLevel": 2,
+      "name": "Financials",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.075157,
+          "benchmarkReturn": 0.042225,
+          "valueAdd": 0.032932,
+          "fundWeight": 13.2079,
+          "benchmarkWeight": 9.5171,
+          "fundCTR": 0.009927,
+          "benchmarkCTR": 0.004019,
+          "relativeCTR": 0.005908,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "69",
+      "parentId": "65",
+      "groupLevel": 3,
+      "name": "Diversified Financials",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.070957,
+          "benchmarkReturn": 0.045254,
+          "valueAdd": 0.025703,
+          "fundWeight": 4.2183,
+          "benchmarkWeight": 4.1687,
+          "fundCTR": 0.002993,
+          "benchmarkCTR": 0.001887,
+          "relativeCTR": 0.001107,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    },
+    {
+      "id": "70",
+      "parentId": "69",
+      "groupLevel": 4,
+      "name": "Capital Markets",
+      "calculationType": "CTR",
+      "methodology": "geometricCompounding",
+      "benchmarks": [
+        {
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "id": "BSLN0003",
+          "name": "Global Equity Fund"
+        }
+      ],
+      "drillable": true,
+      "securities": false,
+      "periods": [
+        {
+          "type": "Custom",
+          "startDate": "20201201",
+          "endDate": "20201231",
+          "returnType": "Gross",
+          "fundReturn": 0.073442,
+          "benchmarkReturn": 0.059664,
+          "valueAdd": 0.013778,
+          "fundWeight": 3.6945,
+          "benchmarkWeight": 2.8145,
+          "fundCTR": 0.002713,
+          "benchmarkCTR": 0.001679,
+          "relativeCTR": 0.001034,
+          "statusCode": 0,
+          "message": "OK"
+        }
+      ]
+    }
+  ]

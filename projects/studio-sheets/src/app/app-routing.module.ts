@@ -8,6 +8,7 @@ import { DefaultDashboardComponent } from './pages/my-content/dashboards/default
 import { DataComponent } from './pages/my-content/data/data.component';
 import { MyContentComponent } from './pages/my-content/my-content.component';
 import { PortfoliosComponent } from './pages/my-content/portfolios/portfolios.component';
+import { DefaultRankSheetComponent } from './pages/my-content/rank-sheets/default-rank-sheet/default-rank-sheet.component';
 import { RankSheetsComponent } from './pages/my-content/rank-sheets/rank-sheets.component';
 import { ReportsComponent } from './pages/my-content/reports/reports.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
     {path: '', component: DashboardsComponent, pathMatch: 'full'}
   ]},
   {path: 'my-content/dashboard/:id', component: DefaultDashboardComponent},
+  {path: 'my-content/rank-sheet/:rsID', component: DefaultRankSheetComponent},
   {path: 'discover', component: DiscoverComponent},
   {path: 'create', component: CreateComponent},
   {path: 'notifications', component: NotificationsComponent},

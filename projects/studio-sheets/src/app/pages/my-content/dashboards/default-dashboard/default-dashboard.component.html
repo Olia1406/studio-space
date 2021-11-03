@@ -52,11 +52,13 @@
 
     </aside>
 
-    <cumulio-dashboard 
+    <cumulio-dashboard style="z-index: 100;"
         [dashboard]="dashboardID"
         [key]="'6d0b27a5-b7d3-4dff-ac1d-7e7ffabf0538'"
         [token]="'v3pWulOvuXzUBpmNlTcsxbQZkri6vIJmEftiKwBSjLQoSUUdVZcZR8wbIObcCxjkl5RhbptmaLQWGW3kJ3GJ4zoIpwhQEgjj0K4M4fh19tIyFH7K7mBQDR0vxpK8GruWXCNxNo4bAqS7orNxreqfrR'"
-        [appServer]="'https://app.us.cumul.io/'">
+        [appServer]="'https://app.us.cumul.io/'"
+        screenMode="desktop"
+        switchScreenModeOnResize="false">
     </cumulio-dashboard>
 
 </article>

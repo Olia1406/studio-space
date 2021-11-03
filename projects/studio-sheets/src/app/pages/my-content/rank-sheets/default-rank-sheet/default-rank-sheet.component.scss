@@ -1,7 +1,7 @@
 @use "../../../../styles/mixins" as *;
 :host ::ng-deep .p-dropdown {
     width: 100%;
-  }
+}
 .page-header {
     @include flexbox(space-between);
     height: 90px;
@@ -45,31 +45,22 @@ article {
             font-weight: 700;
         }
     }
-    .parameters-container {
+    .filters-container {
         border-bottom: 1px solid lightgray;
         padding: 15px 0;
-        .parameters-title {
-            @include flexbox(space-between);
-            padding: 0 15px;
-            h5 {
-                @include font("Nutino600", 16px);
-                font-weight: 700;
-            }
-            div {
-                @include flexbox();
-            }
-            div i {
-                font-size: 14px;
-                margin-left: 8px;
-            }
-        }
-        .parameters-list {
+
+        .filters-list {
             padding: 0 15px;
             h5 {
                 @include font("Nutino400");
                 margin: 15px 0 5px;
             }
-           
         }
     }
+}
+
+.table-container {
+    min-height: calc(100vh - 85px);
+    width: 100%;
+    margin: 10px;
 }

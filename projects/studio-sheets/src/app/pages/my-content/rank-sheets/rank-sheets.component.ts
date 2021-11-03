@@ -1,19 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { DataService } from './data.service';
+import { Router } from '@angular/router';
+import { Card } from 'studio-lib-prefixed';
+
 @Component({
   selector: 'app-rank-sheets',
   templateUrl: './rank-sheets.component.html',
   styleUrls: ['./rank-sheets.component.scss']
 })
 export class RankSheetsComponent implements OnInit {
-  rankSheetData: any;
+  rankSheetList: Array<Card>;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private router: Router) {
+    this.rankSheetList = this.dataService.rankSheetList; 
+  }
 
   ngOnInit(): void {
-    this.rankSheetData = this.dataService.transformNestedData(this.dataService.nestedData);
-    console.log('data', this.dataService.nestedData);
-    console.log('transformed', this.rankSheetData);
   }
+
+  routeToPage(pagePathID: number | string) {
+    this.router.navigateByUrl(`my-content/rank-sheet/${pagePathID}`)
+  }
+
 
 }

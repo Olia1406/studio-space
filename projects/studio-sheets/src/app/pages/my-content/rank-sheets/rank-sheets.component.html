@@ -1,1 +1,15 @@
-<p>rank-sheets works!</p>
+<st-content-header contentItemName="Rank Sheet" contentItemDescription="Review your coverage, price targets and submit price target updates" ></st-content-header>
+<article>
+
+    <section>
+        <h3 id="rank-sheet-title">My dashboards</h3>
+        <div class="line"></div>
+        <div class="rank-items-container">
+          <ng-container *ngFor = "let item of rankSheetList">
+            <st-studio-card [cardData] = "item" (cardEvent) = routeToPage($event)></st-studio-card>
+          </ng-container>
+        </div>
+      </section>
+      
+</article>
+
