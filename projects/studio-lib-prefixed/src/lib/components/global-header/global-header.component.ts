@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ITab } from "./tab.interface";
@@ -8,7 +8,7 @@ import { ITab } from "./tab.interface";
   templateUrl: './global-header.component.html',
   styleUrls: ['./global-header.component.scss']
 })
-export class GlobalHeaderComponent implements OnInit {
+export class GlobalHeaderComponent implements OnInit, OnDestroy {
 
   @Input() tabs: ITab[] = [
     { title: "Some", onClick: () => { }, pageName: "" },

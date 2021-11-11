@@ -16,65 +16,25 @@
     </div>
 </header>
 <article>
-    <aside class="sidebar">
-        <header class="sidebar-title">
-            <h5>Global Filters</h5>
-            <i class="pi pi-angle-double-left"></i>
-        </header>
-
-        <section class="filters-container">
     
-            <div class="filters-list" *ngIf="true">
-                <h5>View</h5>
-                <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true"
-                    filterBy="name" [showClear]="true" placeholder="Rank sheet">
-                    <ng-template pTemplate="selectedItem">
-                        <div class="country-item country-item-value" *ngIf="selectedCountry">
-                            <div>{{selectedCountry.name}}</div>
-                        </div>
-                    </ng-template>
-                    <ng-template let-country pTemplate="item">
-                        <div class="country-item">
-                            <div>{{country.name}}</div>
-                        </div>
-                    </ng-template>
-                </p-dropdown>
+<st-content-sidebar>
+    <st-content-sidebar-section [filterSectionData]="filterSectionData"></st-content-sidebar-section>
+</st-content-sidebar>
 
-                <h5>Cluster</h5>
-                <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" optionLabel="name"
-                    placeholder="No filter"></p-dropdown>
+    <div class="table-container">
 
-                <h5>Benchmarks</h5>
-                <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" optionLabel="name"
-                        placeholder="Select a benchmark"></p-dropdown>
-            </div>
-        </section>
+        <ag-grid-angular #agGrid class="grid-dimentions" [ngClass]="selectedTheme" [rowData]="rowData"
+            [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" rowSelection="multiple" [pagination]="true"
+            [debug]="true" rowGroupPanelShow="always" [sideBar]="true"></ag-grid-angular>
 
-    </aside>
+        <button style="margin: 30px 10px 10px;" class="btn btn-lightgray" (click)="getSelectedRows()">Get selected rows
+        </button>
 
-    
-<div class="table-container" style="min-height: calc(100vh - 85px);">
+        <div class="selected-rows" style="margin: 10px; " *ngIf="selectedDataStringPresentation">
+            {{selectedDataStringPresentation}}
+        </div>
 
-    <ag-grid-angular 
-    #agGrid 
-        style="width: 100%; height: 600px;" 
-        class="ag-theme-balham"
-        [rowData]="rowData" 
-        [columnDefs]="columnDefs"
-        [defaultColDef]="defaultColDef"
-        rowSelection="multiple"
-        
-    ></ag-grid-angular>
-
-    <button style="margin: 30px 10px 10px;" class="btn btn-lightgray" 
-       (click)="getSelectedRows()">Get selected rows
-    </button>
-
-    <div class="selected-rows" style="margin: 10px; " *ngIf="selectedDataStringPresentation">
-    {{selectedDataStringPresentation}}
     </div>
-
-</div>
 
 
 </article>

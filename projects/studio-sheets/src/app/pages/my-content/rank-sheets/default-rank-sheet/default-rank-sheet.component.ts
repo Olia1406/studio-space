@@ -5,6 +5,8 @@ import { AgGridAngular } from 'ag-grid-angular';
 import * as dayjs from 'dayjs'
 import { DataService } from '../data.service';
 import { MobiusData } from '../data.interface';
+import { DropdownDataService, DropdownItem, SidebarSection } from 'studio-lib-prefixed';
+import { FullMobiusData } from 'projects/studio-sheets/src/app/shared/interfaces/rankSheetData.interface';
 
 @Component({
   selector: 'app-default-rank-sheet',
@@ -13,57 +15,37 @@ import { MobiusData } from '../data.interface';
 })
 export class DefaultRankSheetComponent implements OnInit {
   // breadcrumps data
-  items: MenuItem[] = [];
-  home: MenuItem = {};
-
-  // dropdown data
-  selectedCity1: any;
-  selectedCountry: any;
-
-  cities = [
-    { name: 'New York', code: 'NY' },
-    { name: 'Rome', code: 'RM' },
-    { name: 'London', code: 'LDN' },
-    { name: 'Istanbul', code: 'IST' },
-    { name: 'Paris', code: 'PRS' }
-  ]
-  countries = [
-    { name: 'Australia', code: 'AU' },
-    { name: 'Brazil', code: 'BR' },
-    { name: 'China', code: 'CN' },
-    { name: 'Egypt', code: 'EG' },
-    { name: 'France', code: 'FR' },
-    { name: 'Germany', code: 'DE' },
-    { name: 'India', code: 'IN' },
-    { name: 'Japan', code: 'JP' },
-    { name: 'Spain', code: 'ES' },
-    { name: 'United States', code: 'US' }
-  ];
+  items: MenuItem[];
+  home: MenuItem;
+  // filters data
+  filterSectionData: Array<SidebarSection>;
 
   // agGrid data
-  @ViewChild("agGrid", { static: false }) agGrid: AgGridAngular | any;
+  @ViewChild("agGrid", { static: false }) agGrid!: AgGridAngular;
 
-  rankSheetData: any;
+  rankSheetData: FullMobiusData;
   grpLevelsListValues: Array<number>;
   colorsList: Array<string>;
+  selectedDataStringPresentation = '';
+  selectedTheme = '';
 
-  selectedDataStringPresentation: string = '';
-
+  rowData: Array<MobiusData>;
+  clonedRowData: Array<MobiusData>;
   defaultColDef: ColDef = {
     sortable: true,
     filter: true,
     resizable: true,
     floatingFilter: true,
   };
-
-  columnDefs: any = [
+  columnDefs = [
     {
       headerName: 'Group Level',
       field: 'grpLevel',
       lockPosition: true,
       width: 100,
       suppressSizeToFit: true,
-      checkboxSelection: true,
+      rowDrag: true,
+      // checkboxSelection: true,
       cellStyle: (params: CellClassParams): any => {
         for (let i = 0; i < this.grpLevelsListValues.length; i++) {
           if (params.value === this.grpLevelsListValues[i]) {
@@ -75,6 +57,7 @@ export class DefaultRankSheetComponent implements OnInit {
     {
       headerName: 'Entity Name',
       field: 'name',
+      toolPanelClass: ['tp-bronze'],
       width: 200,
       filter: 'agTextColumnFilter',
       editable: true, singleClickEdit: true, onCellValueChanged: (event: NewValueParams) => alert(event.newValue)
@@ -133,24 +116,92 @@ export class DefaultRankSheetComponent implements OnInit {
     { field: 'parentId', width: 100, filter: 'agTextColumnFilter' }
   ];
 
-  rowData: any;
-
-  constructor(private dataService: DataService) {
-    this.rankSheetData = this.dataService.transformNestedData(this.dataService.nestedData);
-    this.grpLevelsListValues = this.getFieldValuesList(this.rankSheetData.performanceData, 'grpLevel');
-    this.colorsList = this.defineColorsList(this.grpLevelsListValues.length);
-
-    this.rowData = this.rankSheetData.performanceData;
-  }
-
-  ngOnInit(): void {
+  constructor(private dataService: DataService, private dropdownDataServ: DropdownDataService) {
     this.items = [
       { label: 'Rank Sheet overview' }
     ];
     this.home = { label: 'Rank Sheet', url: 'my-content/rank-sheets' };
+
+    this.rankSheetData = { ...this.dataService.transformNestedData(this.dataService.nestedData) };
+    this.grpLevelsListValues = this.getFieldValuesList(this.rankSheetData.performanceData, 'grpLevel');
+    this.colorsList = this.defineColorsList(this.grpLevelsListValues.length);
+    this.rowData = this.rankSheetData.performanceData;
+    this.clonedRowData = JSON.parse(JSON.stringify(this.rowData));
+
+    this.filterSectionData = [
+      {
+        displaySectionHeader: true,
+        sectionHeaderName: 'Common parameters',
+        displayFilters: 'show',
+        dropdownDataList: [
+          {
+            name: 'theme',
+            dropdownHeader: 'Select table theme',
+            dropdownValue: 'ag-theme-alpine',
+            filter: false,
+            filterby: 'value',
+            placeholder: 'select theme',
+            dropdownItems: [
+              { label: 'alpine', value: 'ag-theme-alpine' },
+              { label: 'balham', value: 'ag-theme-balham' },
+              { label: 'fresh', value: 'ag-theme-fresh' },
+              { label: 'material', value: 'ag-theme-material' }
+            ]
+          }
+        ]
+      },
+      {
+        displaySectionHeader: true,
+        sectionHeaderName: 'Filters category',
+        displayFilters: 'show',
+        dropdownDataList: [
+          {
+            name: 'grpLevel',
+            dropdownHeader: 'Group level',
+            dropdownValue: '',
+            filter: false,
+            filterby: 'value',
+            placeholder: 'select group level',
+            dropdownItems: this.getDropDownList(this.rankSheetData.performanceData, 'grpLevel')
+          },
+          {
+            name: 'entity',
+            dropdownHeader: 'Entity name',
+            dropdownValue: '',
+            filter: true,
+            filterby: 'value',
+            placeholder: 'select entity',
+            dropdownItems: this.getDropDownList(this.rankSheetData.performanceData, 'name')
+          },
+          {
+            name: 'drillable',
+            dropdownHeader: 'Drillable status',
+            dropdownValue: '',
+            filter: false,
+            filterby: 'value',
+            placeholder: 'select drillable status',
+            dropdownItems: this.getDropDownList(this.rankSheetData.performanceData, 'drillable')
+          }
+        ]
+      }
+    ];
+
+    this.dropdownDataServ.filterValuesList
+      .subscribe(dropdownValues => {
+        this.selectedTheme = dropdownValues.theme;
+
+        this.rowData = this.clonedRowData.filter(((row: MobiusData) =>
+          (row.grpLevel.toString() === dropdownValues.grpLevel || dropdownValues.grpLevel === '') &&
+          (row.drillable.toString() === dropdownValues.drillable || dropdownValues.drillable === '') &&
+          (row.name.toString() === dropdownValues.entity || dropdownValues.entity === '')
+        ))
+      })
   }
 
-  getFieldValuesList(arr: any, field: string): Array<any> {
+  ngOnInit(): void { }
+
+  // methods which get lists to fill dropdown
+  getFieldValuesList(arr: Array<any>, field: string): Array<any> {
     const set = new Set();
     for (const item of arr) {
       set.add(item[field])
@@ -158,6 +209,12 @@ export class DefaultRankSheetComponent implements OnInit {
     return Array.from(set)
   }
 
+  getDropDownList(arr: Array<any>, field: string): Array<DropdownItem> {
+    return this.getFieldValuesList(arr, field).map((item) => ({ 'label': item.toString(), 'value': item.toString() }))
+  }
+  // -----------
+
+  // methods which get list of random colors
   defineColorsList(colorsCount: number): Array<string> {
     const colorsList = [];
     for (let i = 0; i < colorsCount; i++) {
@@ -167,13 +224,13 @@ export class DefaultRankSheetComponent implements OnInit {
   }
 
   colorRenderer() {
-    let o = Math.round, r = Math.random, s = 255;
-    return `rgb(${o(r() * s)}, ${o(r() * s)}, ${o(r() * s)})`;
+    return `rgb(${Math.round(Math.random() * 225)}, ${Math.round(Math.random() * 225)}, ${Math.round(Math.random() * 225)})`;
   }
 
   changeRGBtoRGBA(rgb: string) {
     return `rgba(${rgb.slice(4, rgb.length - 1)}, 0.3)`;
   }
+  // ------------
 
   getSelectedRows() {
     const selectedNodes = this.agGrid.api.getSelectedNodes();
@@ -184,4 +241,7 @@ export class DefaultRankSheetComponent implements OnInit {
     ).join(' ');
   }
 
+
 }
+
+

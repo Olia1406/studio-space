@@ -14,43 +14,10 @@
     </div>
 </header>
 <article>
-    <aside class="sidebar">
-        <header class="sidebar-title">
-            <h5>Parameters</h5>
-            <i class="pi pi-angle-double-left"></i>
-        </header>
-
-        <section class="parameters-container">
-            <div class="parameters-title">
-                <div>
-                    <h5>Common parameters</h5>
-                    <i class="bi bi-info-circle-fill"></i>
-                </div>
-                <i class="pi pi-angle-up"></i>
-            </div>
-            <div class="parameters-list" *ngIf="true">
-                <h5>Portfolio</h5>
-                <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true"
-                    filterBy="name" [showClear]="true" placeholder="Select a Country">
-                    <ng-template pTemplate="selectedItem">
-                        <div class="country-item country-item-value" *ngIf="selectedCountry">
-                            <div>{{selectedCountry.name}}</div>
-                        </div>
-                    </ng-template>
-                    <ng-template let-country pTemplate="item">
-                        <div class="country-item">
-                            <div>{{country.name}}</div>
-                        </div>
-                    </ng-template>
-                </p-dropdown>
-
-                <h5>Benchmark</h5>
-                <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" optionLabel="name"
-                    placeholder="Select a city"></p-dropdown>
-            </div>
-        </section>
-
-    </aside>
+    
+<st-content-sidebar>
+    <st-content-sidebar-section></st-content-sidebar-section>
+</st-content-sidebar>
 
     <cumulio-dashboard style="z-index: 100;"
         [dashboard]="dashboardID"

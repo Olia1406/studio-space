@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Card } from 'studio-lib-prefixed';
 import * as mobiusData from '../../../../assets/mobiusData.json'
+import { FullMobiusData } from '../../../shared/interfaces/rankSheetData.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +26,8 @@ export class DataService {
 
   constructor() { }
 
-  transformNestedData(data: Object | any): Object {
-    const newData = { asOfDate: data.asOfDate, performanceData: this.fromNestedToOneLevel(data.performanceData) };
-    return newData
+  transformNestedData(data: any): FullMobiusData {
+    return { asOfDate: data.asOfDate, performanceData: this.fromNestedToOneLevel(data.performanceData) };
   }
 
   fromNestedToOneLevel(arrOfObj: Array<any>): Array<any> {

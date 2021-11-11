@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ContentHeaderModule, GlobalHeaderModule, SvgIconModule, SidebarItemModule, StudioCardModule} from 'studio-lib-prefixed';
+import { ContentHeaderModule, GlobalHeaderModule, SvgIconModule, SidebarItemModule, StudioCardModule, ContentSidebarModule, ContentSidebarSectionModule} from 'studio-lib-prefixed';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,7 +58,9 @@ import { DefaultRankSheetComponent } from './pages/my-content/rank-sheets/defaul
     FormsModule,
     BrowserAnimationsModule,
     NgxCumulioModule.forRoot(),
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    ContentSidebarModule,
+    ContentSidebarSectionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

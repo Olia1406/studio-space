@@ -5,9 +5,7 @@
         <h3 id="rank-sheet-title">My dashboards</h3>
         <div class="line"></div>
         <div class="rank-items-container">
-          <ng-container *ngFor = "let item of rankSheetList">
-            <st-studio-card [cardData] = "item" (cardEvent) = routeToPage($event)></st-studio-card>
-          </ng-container>
+            <st-studio-card *ngFor = "let item of rankSheetList" [cardData] = "item" (cardEvent) = routeToPage($event)></st-studio-card>
         </div>
       </section>
       

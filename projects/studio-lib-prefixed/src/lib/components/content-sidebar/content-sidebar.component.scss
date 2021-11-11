@@ -1,0 +1,22 @@
+@use "../../styles/mixins" as *;
+
+:host ::ng-deep .p-dropdown {
+    width: 100%;
+}
+.sidebar {
+    box-shadow: inset -1px -1px 0px #ced1d6;
+    background: #fafbfc;
+    width: 280px;
+    height: 100%;   
+    .sidebar-title {
+        @include flexbox(space-between);
+        height: 70px;
+        box-shadow: inset -1px -1px 0px #ced1d6;
+        padding: 15px;
+        h5 {
+            @include font("Nutino600", 16px);
+            font-weight: 700;
+        }
+    }
+
+}

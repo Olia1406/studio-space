@@ -1,7 +1,8 @@
 @use "../../styles/mixins" as * ;
 
 .myContent-container {
-  @include flexbox(flex-start, stretch);
+  display: grid;
+  grid-template-columns: 320px 1fr;
 
   aside {
     display: flex;
@@ -12,6 +13,7 @@
     left: 0;
     padding: 0px;
     width: 320px;
+    min-height: calc(100vh - 52px);
     background: #FAFBFC;
     box-shadow: inset -1px 0px 0px #CED1D6;
   }

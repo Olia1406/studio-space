@@ -1,3 +1,6 @@
+import { Benchmark } from "../../../shared/interfaces/benchmark.interface";
+import { Period } from "../../../shared/interfaces/period.interface";
+
 export interface MobiusData {
     id: string,
     parentId: string | null,
@@ -5,8 +8,8 @@ export interface MobiusData {
     name: string,
     calculationType: string,
     methodology: string,
-    benchmarks: Array<any>,
+    benchmarks: Array<Benchmark>,
     drillable: boolean,
     securities: boolean,
-    periods: Array<any>
+    periods: Array<Period>
 }
