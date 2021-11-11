@@ -25,7 +25,7 @@ import { DropdownDataService } from './dropdown-data.service';
   ]
 })
 export class ContentSidebarSectionComponent implements OnInit {
-  dropdownValuesList: Array<DropdownItem> = [];
+  defaultdDropdownValuesList: any;
   @Input() filterSectionData: Array<SidebarSection> = [
     {
       displaySectionHeader: true,
@@ -102,10 +102,11 @@ export class ContentSidebarSectionComponent implements OnInit {
   constructor(private dropdownDataServ: DropdownDataService) { }
 
   ngOnInit(): void {
+    this.defaultdDropdownValuesList = this.getDropdownValuesList(this.filterSectionData);
     this.dropdownDataServ.filterValuesList.next(this.getDropdownValuesList(this.filterSectionData))
   };
 
-  onChange(event: { originalEvent: PointerEvent, value: DropdownItem }) {
+  onChange() {
     this.dropdownDataServ.filterValuesList.next(this.getDropdownValuesList(this.filterSectionData))
   }
 
@@ -117,15 +118,13 @@ export class ContentSidebarSectionComponent implements OnInit {
       .reduce((accum, curr) => ({ ...accum, ...curr }), {})
   }
 
-
   resetFilters() {
-    this.filterSectionData
-      .forEach((section: SidebarSection) => section.dropdownDataList
-        .forEach((dropdown: Dropdown) => {
-          if (dropdown.name !== 'theme') dropdown.dropdownValue = ''
-        })
-      )
-    this.dropdownDataServ.filterValuesList.next(this.getDropdownValuesList(this.filterSectionData))
+    this.dropdownDataServ.filterValuesList.next(this.defaultdDropdownValuesList)
+    for (let section of this.filterSectionData) {
+      for (let dropdown of section.dropdownDataList) {
+        dropdown.dropdownValue = this.defaultdDropdownValuesList[dropdown.name]
+      }
+    }
   }
 
 }
