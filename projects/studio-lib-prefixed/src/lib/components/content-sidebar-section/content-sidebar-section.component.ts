@@ -119,9 +119,9 @@ export class ContentSidebarSectionComponent implements OnInit {
   }
 
   resetFilters() {
-    this.dropdownDataServ.filterValuesList.next(this.defaultdDropdownValuesList)
-    for (let section of this.filterSectionData) {
-      for (let dropdown of section.dropdownDataList) {
+    this.dropdownDataServ.filterValuesList.next(this.defaultdDropdownValuesList);
+    for (const section of this.filterSectionData) {
+      for (const dropdown of section.dropdownDataList) {
         dropdown.dropdownValue = this.defaultdDropdownValuesList[dropdown.name]
       }
     }
