@@ -165,7 +165,7 @@ export class DefaultRankSheetComponent implements OnInit {
             dropdownItems: this.getDropDownList(this.rankSheetData.performanceData, 'grpLevel')
           },
           {
-            name: 'entity',
+            name: 'name',
             dropdownHeader: 'Entity name',
             dropdownValue: '',
             filter: true,
@@ -190,11 +190,15 @@ export class DefaultRankSheetComponent implements OnInit {
       .subscribe(dropdownValues => {
         this.selectedTheme = dropdownValues.theme;
 
-        this.rowData = this.clonedRowData.filter(((row: MobiusData) =>
-          (row.grpLevel.toString() === dropdownValues.grpLevel || dropdownValues.grpLevel === '') &&
-          (row.drillable.toString() === dropdownValues.drillable || dropdownValues.drillable === '') &&
-          (row.name.toString() === dropdownValues.entity || dropdownValues.entity === '')
-        ))
+        this.rowData = this.clonedRowData.filter(((row: MobiusData | any) => {
+            let result = true;
+            for (const key in dropdownValues) {
+              if(dropdownValues.hasOwnProperty(key) && row.hasOwnProperty(key)) {
+                result &&= row[key].toString()===dropdownValues[key] || !dropdownValues[key]
+              }
+            }
+            return result
+        }))
       })
   }
 
