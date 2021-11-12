@@ -11,7 +11,7 @@ export class StudioCardComponent implements OnInit {
 
   @Input() cardData: Card = {
     id: 1,
-    contentItemSrc: 'https://firebasestorage.googleapis.com/v0/b/my-project-d612f.appspot.com/o/sun.png?alt=media&token=ed1d41e8-37bd-4cf1-a28d-d02c47332a3e',
+    contentItemSrc: 'd-multiple.png',
     cardName: 'Default dashboard',
     cardIconClass: ''
   }

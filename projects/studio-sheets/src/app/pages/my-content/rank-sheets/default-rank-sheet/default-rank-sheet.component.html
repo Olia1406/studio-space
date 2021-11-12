@@ -1,0 +1,40 @@
+<header class="page-header">
+    <div class="left-side">
+        <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+        <h3>Rank Sheet</h3>
+    </div>
+    <div class="right-side">
+        <button class="btn btn-lightgray"><i class="pi pi-refresh"></i></button>
+        <button class="btn btn-lightgray"><i class="bi bi-share-fill"></i></button>
+        <button class="btn btn-lightgray"><i class="pi pi-print"></i></button>
+        <button class="btn btn-lightgray"><i class="pi pi-download"></i></button>
+        <button class="btn btn-teal">+ Add data</button>
+        <div class="line"></div>
+        <button class="btn btn-small">
+            <i class="bi bi-three-dots"></i>
+        </button>
+    </div>
+</header>
+<article>
+    
+<st-content-sidebar>
+    <st-content-sidebar-section [filterSectionData]="filterSectionData"></st-content-sidebar-section>
+</st-content-sidebar>
+
+    <div class="table-container">
+
+        <ag-grid-angular #agGrid class="grid-dimentions" [ngClass]="selectedTheme" [rowData]="rowData"
+            [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" rowSelection="multiple" [pagination]="true"
+            [debug]="true" rowGroupPanelShow="always" [sideBar]="true"></ag-grid-angular>
+
+        <button style="margin: 30px 10px 10px;" class="btn btn-lightgray" (click)="getSelectedRows()">Get selected rows
+        </button>
+
+        <div class="selected-rows" style="margin: 10px; " *ngIf="selectedDataStringPresentation">
+            {{selectedDataStringPresentation}}
+        </div>
+
+    </div>
+
+
+</article>

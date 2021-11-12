@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-// @import url(../src/app/styles/_fonts.scss);
 @import '../src/app/styles/fonts';
 
 * {
@@ -8,6 +7,7 @@
     padding: 0;
     color: #44474B;;
 }
+
 
 .p-breadcrumb {
     border: none;
@@ -31,6 +31,9 @@
     &:hover {
         background-color: lightgray;
     }
+        i {
+            color:#00465C;
+        }
 }
 
 .btn-teal {
@@ -52,3 +55,13 @@
     }
 }
 
+
+.ex {
+    background-image: url('../../studio-sheets/src/assets/images/financial.png');
+    background-image: url('../../studio-sheets/src/assets/images/d-multiple.png');
+    background-image: url('../../studio-sheets/src/assets/images/datatable.png');
+    background-image: url('../../studio-sheets/src/assets/images/dashboard.png');
+    background-image: url('../../studio-sheets/src/assets/images/sheet.png');
+    background-image: url('../../studio-sheets/src/assets/images/defaultImg.png');
+    background-image: url('../../studio-sheets/src/assets/images/d-2.jpg');
+  }

@@ -1,0 +1,19 @@
+@use "../../../styles/mixins" as *;
+
+article {
+  padding: 20px 30px;
+  section {
+    h3{
+      @include font("Nutino600", 16px);
+      color: #44474B;
+      margin: 25px 0 12px;
+    }
+    .line {
+      border: 1px solid #dcdcde;
+      margin: 5px 0;
+    }
+    .rank-items-container {
+      @include flexbox();
+    }
+  }
+}

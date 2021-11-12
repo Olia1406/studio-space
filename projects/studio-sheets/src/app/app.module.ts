@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ContentHeaderModule, GlobalHeaderModule, SvgIconModule, SidebarItemModule, StudioCardModule} from 'studio-lib-prefixed';
+import { ContentHeaderModule, GlobalHeaderModule, SvgIconModule, SidebarItemModule, StudioCardModule, ContentSidebarModule, ContentSidebarSectionModule} from 'studio-lib-prefixed';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,9 @@ import {DropdownModule} from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxCumulioModule } from 'ngx-cumulio';
+import { AgGridModule } from 'ag-grid-angular';
+import 'ag-grid-enterprise';
+import { DefaultRankSheetComponent } from './pages/my-content/rank-sheets/default-rank-sheet/default-rank-sheet.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { NgxCumulioModule } from 'ngx-cumulio';
     ReportsComponent,
     PortfoliosComponent,
     RankSheetsComponent,
-    DefaultDashboardComponent
+    DefaultDashboardComponent,
+    DefaultRankSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,10 @@ import { NgxCumulioModule } from 'ngx-cumulio';
     DropdownModule,
     FormsModule,
     BrowserAnimationsModule,
-    NgxCumulioModule.forRoot()
+    NgxCumulioModule.forRoot(),
+    AgGridModule.withComponents([]),
+    ContentSidebarModule,
+    ContentSidebarSectionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

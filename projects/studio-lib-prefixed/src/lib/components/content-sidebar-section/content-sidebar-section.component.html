@@ -1,0 +1,29 @@
+<section class="filters-container" *ngFor="let sectionData of filterSectionData ">
+    <div class="parameters-title" *ngIf="sectionData.displaySectionHeader">
+        <div>
+            <h5>{{sectionData.sectionHeaderName}}</h5>
+            <i class="bi bi-info-circle-fill"></i>
+        </div>
+        <button (click)="sectionData.displayFilters = sectionData.displayFilters === 'show' ? 'hide' : 'show'"><i
+                [ngClass]="sectionData.displayFilters === 'show'?'pi pi-angle-down':'pi pi-angle-up'"></i></button>
+    </div>
+
+    <div class="filters-list" [@showHide]="sectionData.displayFilters">
+        <ng-container *ngFor="let dropdownData of sectionData.dropdownDataList">
+            <h5>{{dropdownData.dropdownHeader}}</h5>
+            <p-dropdown 
+            [options]="dropdownData.dropdownItems" 
+            optionLabel="label" 
+            [(ngModel)]="dropdownData.dropdownValue" 
+            [placeholder]="dropdownData.placeholder"
+            [filter] = "dropdownData.filter"
+            filterby = "dropdownData.filterby"
+            optionValue="value"
+            (onChange)="onChange()"
+            ></p-dropdown>
+        </ng-container>
+    </div>
+
+</section>
+
+<button class="btn btn-lightgray reset-filters-btn" (click)="resetFilters()">reset filters</button>

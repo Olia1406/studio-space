@@ -1,7 +1,8 @@
 @use "../../../../styles/mixins" as *;
 :host ::ng-deep .p-dropdown {
     width: 100%;
-  }
+}
+
 .page-header {
     @include flexbox(space-between);
     height: 90px;
@@ -29,10 +30,11 @@
 }
 
 article {
-    @include flexbox(flex-start, stretch);
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: calc(100vh - 142px)
 }
 .sidebar {
-    width: 280px;
     box-shadow: inset -1px -1px 0px #ced1d6;
     background: #fafbfc;
     .sidebar-title {
@@ -45,31 +47,33 @@ article {
             font-weight: 700;
         }
     }
-    .parameters-container {
-        border-bottom: 1px solid lightgray;
+    .filters-container {
         padding: 15px 0;
-        .parameters-title {
-            @include flexbox(space-between);
-            padding: 0 15px;
-            h5 {
-                @include font("Nutino600", 16px);
-                font-weight: 700;
-            }
-            div {
-                @include flexbox();
-            }
-            div i {
-                font-size: 14px;
-                margin-left: 8px;
-            }
-        }
-        .parameters-list {
+
+        .filters-list {
             padding: 0 15px;
             h5 {
                 @include font("Nutino400");
                 margin: 15px 0 5px;
             }
-           
         }
     }
 }
+
+.table-container {
+    margin: 10px;
+}
+
+:host ::ng-deep .tp-bronze {
+    background-color: rgb(223, 137, 25);
+    padding-left: 3px;
+  }
+ 
+.grid-dimentions {
+    width: 100%; height: 600px;
+}  
+
+:host ::ng-deep .ag-pivot-off .ag-header-group-cell {
+    font-size: 17px;
+    background-color: rgb(233, 242, 243)
+  }
