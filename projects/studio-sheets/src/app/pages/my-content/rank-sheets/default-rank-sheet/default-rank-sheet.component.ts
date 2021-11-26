@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { CellClassParams, ColDef, NewValueParams, ValueFormatterParams } from 'ag-grid-community';
 import { AgGridAngular } from 'ag-grid-angular';
@@ -7,18 +7,21 @@ import { DataService } from '../data.service';
 import { MobiusData } from '../data.interface';
 import { DropdownDataService, DropdownItem, SidebarSection } from 'studio-lib-prefixed';
 import { FullMobiusData } from 'projects/studio-sheets/src/app/shared/interfaces/rankSheetData.interface';
+import {Subject, Subscription} from "rxjs";
+import {takeUntil} from "rxjs/operators";
 
 @Component({
   selector: 'app-default-rank-sheet',
   templateUrl: './default-rank-sheet.component.html',
   styleUrls: ['./default-rank-sheet.component.scss']
 })
-export class DefaultRankSheetComponent implements OnInit {
+export class DefaultRankSheetComponent implements OnInit, OnDestroy {
   // breadcrumps data
   items: MenuItem[];
   home: MenuItem;
   // filters data
   filterSectionData: Array<SidebarSection>;
+  destroy = new Subject<void>();
 
   // agGrid data
   @ViewChild("agGrid", { static: false }) agGrid!: AgGridAngular;
@@ -187,6 +190,7 @@ export class DefaultRankSheetComponent implements OnInit {
     ];
 
     this.dropdownDataServ.filterValuesList
+      .pipe(takeUntil(this.destroy))
       .subscribe(dropdownValues => {
         this.selectedTheme = dropdownValues.theme;
 
@@ -203,6 +207,11 @@ export class DefaultRankSheetComponent implements OnInit {
   }
 
   ngOnInit(): void { }
+
+  ngOnDestroy(): void {
+    this.destroy.next();
+    this.destroy.complete();
+  }
 
   // methods which get lists to fill dropdown
   getFieldValuesList(arr: Array<any>, field: string): Array<any> {

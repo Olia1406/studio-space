@@ -1,1 +1,9 @@
 <p>data works!</p>
+<!-- <app-font-sizer [(size)] = "fontSizePx"></app-font-sizer> -->
+<app-font-sizer  [size]="fontSizePx" (sizeChange)="fontSizePx=$event"></app-font-sizer >
+
+<div [style.font-size.px]="fontSizePx">Resizable Text</div>
+<hr>
+<div>
+    <h1 #tempVar>template valiable</h1>
+</div>
