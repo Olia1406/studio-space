@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, fakeAsync, TestBed} from '@angular/core/testing';
 
 import { ContentSidebarSectionComponent } from './content-sidebar-section.component';
 import {DropdownDataService} from "./dropdown-data.service";
@@ -123,14 +123,10 @@ describe('ContentSidebarSectionComponent', () => {
     component.filterSectionData = mockSectionData;
     component.ngOnInit();
     fixture.detectChanges();
-    let countOfDropdowns = 0;
 
-      const dropdowns = fixture.debugElement.queryAll(By.css('p-dropdown'));
-      for (const dropdown of dropdowns) {
-        countOfDropdowns++;
-      }
+    const dropdowns = fixture.debugElement.queryAll(By.css('p-dropdown'));
 
-    expect(Object.keys(component.getDropdownValuesList(component.filterSectionData)).length).toBe(countOfDropdowns);
+    expect(Object.keys(component.getDropdownValuesList(component.filterSectionData)).length).toBe(dropdowns.length);
   })
 
   it('first section header has proper text content', () => {

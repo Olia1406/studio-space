@@ -26,6 +26,7 @@ import { NgxCumulioModule } from 'ngx-cumulio';
 import { AgGridModule } from 'ag-grid-angular';
 import 'ag-grid-enterprise';
 import { DefaultRankSheetComponent } from './pages/my-content/rank-sheets/default-rank-sheet/default-rank-sheet.component';
+import { FontSizerComponent } from './pages/my-content/data/font-sizer/font-sizer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DefaultRankSheetComponent } from './pages/my-content/rank-sheets/defaul
     PortfoliosComponent,
     RankSheetsComponent,
     DefaultDashboardComponent,
-    DefaultRankSheetComponent
+    DefaultRankSheetComponent,
+    FontSizerComponent
   ],
   imports: [
     BrowserModule,
