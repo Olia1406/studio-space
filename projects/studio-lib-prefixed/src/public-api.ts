@@ -30,3 +30,7 @@ export * from './lib/components/content-sidebar-section/dropdown-data.service';
 export * from './lib/shared/interfaces/dropdown.iterface';
 export * from './lib/shared/interfaces/dropdownItems.interface';
 export * from './lib/shared/interfaces/sidebarSection.interface';
+
+export * from './lib/components/creature-card/creature-card.component';
+export * from './lib/components/creature-card/creature-card.module';
+export * from './lib/components/creature-card/creature-card.interface';

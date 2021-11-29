@@ -1,0 +1,39 @@
+@use "../../../styles/mixins" as *;
+:host ::ng-deep .p-dropdown {
+    width: 100%;
+  }
+.page-header {
+    @include flexbox(space-between);
+    min-height: 110px;
+    background: #fafbfc;
+    box-shadow: inset 0px -1px 0px #ced1d6;
+    padding: 0 20px 0 30px;
+
+    .left-side {
+        h3 {
+            @include font("Nutino600", 24px);
+            font-weight: 700;
+        }
+        p{
+            @include font("Nutino400", 14px);    
+        }
+    }
+
+    .right-side {
+        .white {
+            color: white;
+        }
+        .line {
+            width: 100px;
+            height: 100px;
+            display: inline;
+            border: 1px solid rgb(168, 168, 168);
+            margin: 0 3px;
+            transform: rotate(90deg);
+        }
+    }
+}
+:host ::ng-deep st-content-sidebar .sidebar {
+    min-height: 900px;
+}
+

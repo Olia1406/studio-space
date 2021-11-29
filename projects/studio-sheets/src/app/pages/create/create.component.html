@@ -1,1 +1,6 @@
-<p>create works!</p>
+<div class="creatures-container">
+    <h4>What would you like to create today?</h4>
+    <st-creature-card *ngFor=" let creature of creaturesList " [creatureDescription]="creature"
+        (pagePath)=routeToPage($event)></st-creature-card>
+
+</div>
