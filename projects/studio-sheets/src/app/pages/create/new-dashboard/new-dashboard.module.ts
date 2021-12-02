@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NewDashboardComponent } from './new-dashboard.component';
-import { NewDashboardRoutingModule } from './new-dashboard-routing.module';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { DropdownModule } from 'primeng/dropdown';
 import { ContentSidebarModule, ContentSidebarSectionModule } from 'studio-lib-prefixed';
+import {RouterModule, Routes} from "@angular/router";
+
+const routes: Routes = [
+  {path: '', component: NewDashboardComponent}
+];
+
 
 @NgModule({
   declarations: [NewDashboardComponent],
@@ -16,7 +21,7 @@ import { ContentSidebarModule, ContentSidebarSectionModule } from 'studio-lib-pr
     // ContentSidebarModule,
     // ContentSidebarSectionModule,
 
-    NewDashboardRoutingModule
+    RouterModule.forChild(routes)
   ]
 })
 export class NewDashboardModule { }
