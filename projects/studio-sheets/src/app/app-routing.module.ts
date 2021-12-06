@@ -25,14 +25,8 @@ const routes: Routes = [
   {path: 'my-content/dashboard/:id', component: DefaultDashboardComponent},
   {path: 'my-content/rank-sheet/:rsID', component: DefaultRankSheetComponent},
   {path: 'discover', component: DiscoverComponent},
-  {path: 'create', 
+  {path: 'create',
   loadChildren: () => import('./pages/create/create.module').then( m =>  m.CreateModule)
-},
-  {path: 'create/new-dashboard', 
-  loadChildren: () => import('./pages/create/new-dashboard/new-dashboard.module').then( m => m.NewDashboardModule)
-},
-  {path: 'create/new-report', 
-  loadChildren: () => import('./pages/create/new-report/new-report.module').then( m => m.NewReportModule)
 },
   {path: 'notifications', component: NotificationsComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
