@@ -1,6 +1,5 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateComponent } from './pages/create/create.component';
 import { DiscoverComponent } from './pages/discover/discover.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardsComponent } from './pages/my-content/dashboards/dashboards.component';
@@ -26,7 +25,9 @@ const routes: Routes = [
   {path: 'my-content/dashboard/:id', component: DefaultDashboardComponent},
   {path: 'my-content/rank-sheet/:rsID', component: DefaultRankSheetComponent},
   {path: 'discover', component: DiscoverComponent},
-  {path: 'create', component: CreateComponent},
+  {path: 'create',
+  loadChildren: () => import('./pages/create/create.module').then( m =>  m.CreateModule)
+},
   {path: 'notifications', component: NotificationsComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];

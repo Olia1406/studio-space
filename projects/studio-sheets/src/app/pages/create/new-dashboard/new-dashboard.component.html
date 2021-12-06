@@ -1,0 +1,17 @@
+<header class="page-header">
+    <div class="left-side">
+        <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+        <h3>New dashboard</h3>
+        <P>Type the description of a dashboard for the consumer</P>
+    </div>
+    <div class="right-side">
+        <button class="btn btn-lightgray"><i class="bi bi-bell-fill"></i> Set up alerts</button>
+        <button class="btn btn-lightgray">Parameters configuration</button>
+        <button class="btn btn-teal"><i class="bi bi-plus white"></i> Add data</button>
+        <div class="line"></div>
+        <button class="btn btn-teal">Save</button>
+    </div>
+</header>
+<st-content-sidebar>
+    <st-content-sidebar-section [filterSectionData]="filterSectionData"></st-content-sidebar-section>
+</st-content-sidebar>

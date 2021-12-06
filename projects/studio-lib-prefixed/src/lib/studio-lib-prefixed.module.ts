@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { StudioLibPrefixedComponent } from './studio-lib-prefixed.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -8,7 +7,6 @@ import { CommonModule } from '@angular/common';
     StudioLibPrefixedComponent
   ],
   imports: [
-    BrowserModule,
     CommonModule
   ],
   exports: [

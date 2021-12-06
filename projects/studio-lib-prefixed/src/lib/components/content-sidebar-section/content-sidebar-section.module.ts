@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentSidebarSectionComponent } from './content-sidebar-section.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 
@@ -14,8 +13,7 @@ import { DropdownModule } from 'primeng/dropdown';
   imports: [
     CommonModule,
     DropdownModule,
-    FormsModule,
-    BrowserAnimationsModule
+    FormsModule
   ],
   exports: [
     ContentSidebarSectionComponent

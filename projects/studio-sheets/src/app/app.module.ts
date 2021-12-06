@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ContentHeaderModule, GlobalHeaderModule, SvgIconModule, SidebarItemModule, StudioCardModule, ContentSidebarModule, ContentSidebarSectionModule} from 'studio-lib-prefixed';
+import { ContentHeaderModule, 
+  GlobalHeaderModule, 
+  SvgIconModule, 
+  SidebarItemModule, 
+  StudioCardModule, 
+  ContentSidebarModule, 
+  ContentSidebarSectionModule, 
+  CreatureCardModule
+} from 'studio-lib-prefixed';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MyContentComponent } from './pages/my-content/my-content.component';
 import { DiscoverComponent } from './pages/discover/discover.component';
-import { CreateComponent } from './pages/create/create.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { RouterModule } from '@angular/router';
 import { SidebarLiComponent } from './components/sidebar-li/sidebar-li.component';
@@ -34,7 +41,6 @@ import { FontSizerComponent } from './pages/my-content/data/font-sizer/font-size
     HomeComponent,
     MyContentComponent,
     DiscoverComponent,
-    CreateComponent,
     NotificationsComponent,
     SidebarLiComponent,
     DashboardsComponent,
@@ -62,7 +68,8 @@ import { FontSizerComponent } from './pages/my-content/data/font-sizer/font-size
     NgxCumulioModule.forRoot(),
     AgGridModule.withComponents([]),
     ContentSidebarModule,
-    ContentSidebarSectionModule
+    ContentSidebarSectionModule,
+    CreatureCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

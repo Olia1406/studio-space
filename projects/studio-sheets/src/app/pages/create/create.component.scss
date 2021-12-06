@@ -1,0 +1,11 @@
+@use '../../styles/mixins' as *;
+.creatures-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 150px auto;
+    h4 {
+      @include font("Nutino400", 20px);
+      margin-bottom: 15px;
+    }
+}
