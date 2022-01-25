@@ -7,7 +7,7 @@ import { DataService } from '../data.service';
 import { MobiusData } from '../data.interface';
 import { DropdownDataService, DropdownItem, SidebarSection } from 'studio-lib-prefixed';
 import { FullMobiusData } from 'projects/studio-sheets/src/app/shared/interfaces/rankSheetData.interface';
-import {Subject, Subscription} from "rxjs";
+import {Subject} from "rxjs";
 import {takeUntil} from "rxjs/operators";
 
 @Component({
@@ -215,6 +215,7 @@ export class DefaultRankSheetComponent implements OnInit, OnDestroy {
 
   // methods which get lists to fill dropdown
   getFieldValuesList(arr: Array<any>, field: string): Array<any> {
+    console.log(arr)
     const set = new Set();
     for (const item of arr) {
       set.add(item[field])
