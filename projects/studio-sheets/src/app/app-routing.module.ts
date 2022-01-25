@@ -12,7 +12,7 @@ import { RankSheetsComponent } from './pages/my-content/rank-sheets/rank-sheets.
 import { ReportsComponent } from './pages/my-content/reports/reports.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'my-content', component: MyContentComponent, children: [
     {path: 'dashboards', component: DashboardsComponent},
